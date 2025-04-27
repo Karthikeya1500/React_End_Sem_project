@@ -62,7 +62,7 @@ const Newsapp = () => {
         <button onClick={() => setSearch('business')}>Business</button>
         <button onClick={() => setSearch('science')}>Science</button> 
         <button onClick={() => setSearch('world')}>World</button> 
-        <button onClick={() => setSearch('india')}>India</button>
+        <button onClick={() => setSearch('india')}>India</button>   
         
               
     </div>
