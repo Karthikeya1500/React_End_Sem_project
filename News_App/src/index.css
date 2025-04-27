@@ -108,10 +108,18 @@ nav ul{
   cursor: pointer;
   padding: 2px;
 }
-
-
 .head{
   text-align: center;
   font-weight: 600;
   font-size: 26px;
 }
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 20px;
+  background-color: rgb(223, 63, 63);
+}
+

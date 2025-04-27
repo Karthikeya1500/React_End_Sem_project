@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card.jsx';
 
 const Newsapp = () => {
-  const [search, setSearch] = useState('india');
+  const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
   const API_KEY = '9c3ed8ee95884dec979460a60f96675b';
 
@@ -12,13 +12,13 @@ const Newsapp = () => {
     );
     const jsonData = await response.json();
     console.log(jsonData.articles);
-    let dt = jsonData.articles.slice(0, 10);
+    let dt = jsonData.articles.slice(0, 200);
     setNewsData(dt);
   };
 
   useEffect(() => {
     getData();
-  }, [search]); // Now, getData will run whenever `search` changes
+  }, [search]); 
 
   const handleInput = (e) => {
     console.log(e.target.value);
@@ -33,11 +33,11 @@ const Newsapp = () => {
     <div>
       <nav>
         <div>
-          <h1>Trendy News</h1>
+          <h1 style={{fontSize: "25px"}}>DailyDrop</h1>
         </div>
         <ul style={{ display: 'flex', gap: '11px' }}>
-          <a style={{ fontWeight: 600, fontSize: '17px' }}>All News</a>
-          <a style={{ fontWeight: 600, fontSize: '17px' }}>Trending</a>
+          <a style={{ fontWeight: 600, fontSize: '20px' }}>News at Your Fingertips</a>
+          
         </ul>
         <div className="searchBar">
           <input
@@ -50,7 +50,7 @@ const Newsapp = () => {
         </div>
       </nav>
       <div>
-        <p className="head">Stay Updated with TrendyNews</p>
+        <p className="head">Truth Delivered</p>
       </div>
       <div className="categoryBtn">
         <button onClick={() => setSearch('sports')}>Sports</button>
@@ -66,10 +66,15 @@ const Newsapp = () => {
         
               
     </div>
-
-      <div>{newsData ? <Card data={newsData} /> : null}</div>
       
+      <div>{newsData ? <Card data={newsData} /> : null}</div>
+      <div className="footer">
+        <p>© 2025 DailyDrop. All rights reserved.</p>
+        <p>Made with ❤️ by [Karthikeya]</p>
+        
+        </div>
     </div>
+    
     
   );
 };
