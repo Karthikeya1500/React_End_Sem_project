@@ -4,7 +4,7 @@ import Card from './Card.jsx';
 const Newsapp = () => {
   const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
-  const API_KEY = '9c3ed8ee95884dec979460a60f96675b';
+  const API_KEY = 'e3ccd713f29343afb68f17e5d555e61a';
 
   const getData = async () => {
     const response = await fetch(
@@ -36,7 +36,7 @@ const Newsapp = () => {
           <h1 style={{fontSize: "25px",color: "white"}}>DailyDrop</h1>
         </div>
         <ul style={{ display: 'flex', gap: '11px' }}>
-          <a style={{ fontWeight: 600, fontSize: '20px',color: "white" }}>News at Your Fingertips</a>
+          
           
         </ul>
         <div className="searchBar">
