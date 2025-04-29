@@ -12,7 +12,7 @@ const Newsapp = () => {
     );
     const jsonData = await response.json();
     console.log(jsonData.articles);
-    let dt = jsonData.articles.slice(0, 200);
+    let dt = jsonData.articles.slice(0, 25);
     setNewsData(dt);
   };
 
@@ -33,10 +33,10 @@ const Newsapp = () => {
     <div>
       <nav>
         <div>
-          <h1 style={{fontSize: "25px"}}>DailyDrop</h1>
+          <h1 style={{fontSize: "25px",color: "white"}}>DailyDrop</h1>
         </div>
         <ul style={{ display: 'flex', gap: '11px' }}>
-          <a style={{ fontWeight: 600, fontSize: '20px' }}>News at Your Fingertips</a>
+          <a style={{ fontWeight: 600, fontSize: '20px',color: "white" }}>News at Your Fingertips</a>
           
         </ul>
         <div className="searchBar">
@@ -69,8 +69,8 @@ const Newsapp = () => {
       
       <div>{newsData ? <Card data={newsData} /> : null}</div>
       <div className="footer">
-        <p>© 2025 DailyDrop. All rights reserved.</p>
-        <p>Made with ❤️ by [Karthikeya]</p>
+        <p style={{color:"white"}}>© 2025 DailyDrop. All rights reserved.</p>
+        
         
         </div>
     </div>

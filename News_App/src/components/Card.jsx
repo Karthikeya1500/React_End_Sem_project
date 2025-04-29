@@ -24,7 +24,7 @@ const Card = ({ data }) => {
                   {curItem.title}
                 </a>
                 <p>{curItem.description}</p>
-                <button onClick={() => window.open(curItem.url)}>
+                <button  onClick={() => window.open(curItem.url)}>
                   Read More
                 </button>
               </div>

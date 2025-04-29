@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -15,7 +16,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(241, 53, 28);
+  background-color: rgb(41, 38, 41);
   padding: 10px;
 }
 nav input{
@@ -55,11 +56,15 @@ nav ul{
 
 .card{
   width: 320px;
-  box-shadow: 0px 4px 4px 4px rgb(255, 255, 255);
+  
   background-color: white;
   border-radius: 3px;
   margin-top: 21px;
   border: 1px solid rgb(236, 236, 236);
+}
+.card:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0px 4px 4px 4px rgb(108, 98, 98);
 }
 .card img{
   width: 100%;
@@ -79,6 +84,7 @@ nav ul{
 }
 .card .content{
   padding: 9px;
+  
 }
 .card button{
   background-color: rgb(29, 162, 214);
@@ -99,7 +105,7 @@ nav ul{
   gap: 11px;
   width: 130px;
   height: 33px;
-  background-color: rgb(136, 221, 16);
+  background-color: rgb(44, 44, 41);
   border: none;
   outline: none;
   font-size: 18px;
@@ -120,6 +126,5 @@ nav ul{
   align-items: center;
   
   margin-top: 20px;
-  background-color: rgb(223, 63, 63);
+  background-color: rgb(41, 38, 41);
 }
-
