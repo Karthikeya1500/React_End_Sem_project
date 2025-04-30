@@ -49,23 +49,33 @@ const Newsapp = () => {
           <button onClick={getData}>Search</button>
         </div>
       </nav>
-      <div>
-        <p className="head">Truth Delivered</p>
-      </div>
+      
       <div className="categoryBtn">
-        <button onClick={() => setSearch('sports')}>Sports</button>
-        <button onClick={() => setSearch('politics')}>Politics</button>
-        <button onClick={() => setSearch('entertainment')}>Entertainment</button>
-        <button onClick={() => setSearch('health')}>Health</button>
-        <button onClick={() => setSearch('fitness')}>Fitness</button>
-        <button onClick={() => setSearch('technology')}>Technology</button> 
-        <button onClick={() => setSearch('business')}>Business</button>
-        <button onClick={() => setSearch('science')}>Science</button> 
-        <button onClick={() => setSearch('world')}>World</button> 
-        <button onClick={() => setSearch('india')}>India</button>   
-        
-              
-    </div>
+  <div className="buttonWrapper">
+    <button onClick={() => setSearch('sports')}>Sports</button>
+    <button onClick={() => setSearch('politics')}>Politics</button>
+    <button onClick={() => setSearch('entertainment')}>Entertainment</button>
+    <button onClick={() => setSearch('health')}>Health</button>
+    <button onClick={() => setSearch('fitness')}>Fitness</button>
+    <button onClick={() => setSearch('technology')}>Technology</button>
+    <button onClick={() => setSearch('business')}>Business</button>
+    <button onClick={() => setSearch('science')}>Science</button>
+    <button onClick={() => setSearch('world')}>World</button>
+    <button onClick={() => setSearch('india')}>India</button>
+
+    {/* Duplicate buttons for seamless scrolling */}
+    <button onClick={() => setSearch('sports')}>Sports</button>
+    <button onClick={() => setSearch('politics')}>Politics</button>
+    <button onClick={() => setSearch('entertainment')}>Entertainment</button>
+    <button onClick={() => setSearch('health')}>Health</button>
+    <button onClick={() => setSearch('fitness')}>Fitness</button>
+    <button onClick={() => setSearch('technology')}>Technology</button>
+    <button onClick={() => setSearch('business')}>Business</button>
+    <button onClick={() => setSearch('science')}>Science</button>
+    <button onClick={() => setSearch('world')}>World</button>
+    <button onClick={() => setSearch('india')}>India</button>
+  </div>
+</div>
       
       <div>{newsData ? <Card data={newsData} /> : null}</div>
       <div className="footer">

@@ -16,7 +16,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(41, 38, 41);
+  background-color: #37474f;
   padding: 10px;
 }
 nav input{
@@ -51,6 +51,8 @@ nav ul{
   justify-content: center;
   gap:41px;
   flex-wrap: wrap;
+  
+  
 
 }
 
@@ -61,6 +63,19 @@ nav ul{
   border-radius: 3px;
   margin-top: 21px;
   border: 1px solid rgb(236, 236, 236);
+  border-color: antiquewhite;
+  box-shadow: 0px 4px 4px 4px rgb(108, 98, 98);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  
 }
 .card:hover {
   transform: translateY(-10px); 
@@ -96,16 +111,33 @@ nav ul{
   font-size: 13px;
   border-radius: 2px;
 }
-.categoryBtn{
-  display: flex;
-  justify-content: center;
-  gap: 11px;
+@keyframes scrollButtons {
+  0% {
+    transform: translateX(0); /* Start at the initial position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move completely to the left */
+  }
 }
-.categoryBtn button{
-  gap: 11px;
+
+.categoryBtn {
+  display: flex;
+  overflow: hidden; /* Hide overflowing buttons */
+  white-space: nowrap; /* Prevent buttons from wrapping */
+  position: relative; /* Ensure proper positioning for animation */
+  margin-top: 20px;
+}
+
+.categoryBtn .buttonWrapper {
+  display: flex;
+  animation: scrollButtons 30s linear infinite; /* Smooth scrolling animation */
+}
+
+.categoryBtn button {
+  display: inline-block;
   width: 130px;
   height: 33px;
-  background-color: rgb(44, 44, 41);
+  background-color: #37474f;
   border: none;
   outline: none;
   font-size: 18px;
@@ -113,6 +145,7 @@ nav ul{
   color: white;
   cursor: pointer;
   padding: 2px;
+  margin-right: 11px;
 }
 .head{
   text-align: center;
@@ -126,5 +159,5 @@ nav ul{
   align-items: center;
   
   margin-top: 20px;
-  background-color: rgb(41, 38, 41);
+  background-color: #37474f;
 }
