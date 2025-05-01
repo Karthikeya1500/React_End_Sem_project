@@ -1,5 +1,5 @@
 import './App.css'
-import Newsapp from "./components/newsapp"
+import Newsapp from "./components/News"
 
 
 
