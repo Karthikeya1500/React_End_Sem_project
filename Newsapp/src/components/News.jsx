@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card.jsx';
 
-const Newsapp = () => {
+const News = () => {
   const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const API_KEY = 'e3ccd713f29343afb68f17e5d555e61a';
+  const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
 
   // Toggle dark mode
   const toggleTheme = () => {
@@ -210,4 +210,4 @@ const Newsapp = () => {
   );
 };
 
-export default Newsapp;
+export default News;
