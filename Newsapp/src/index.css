@@ -55,6 +55,7 @@ nav ul{
   flex-wrap: wrap;
   padding: 2rem;
   background-color: #f5f6fa;
+  padding-bottom: 5rem;
 }
 
 .card{
@@ -227,13 +228,14 @@ nav ul{
   font-size: 26px;
 }
 .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  margin-top: 20px;
-  background-color: #37474f;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #1a1a1a;
+  z-index: 1000;
 }
 
 /* Navbar Styles */
@@ -411,13 +413,6 @@ nav ul{
 }
 
 /* Footer Styles */
-.footer {
-  padding: 1rem;
-  text-align: center;
-  background-color: #1a1a1a;
-  margin-top: 2rem;
-}
-
 .footer p {
   color: white;
   margin: 0;
