@@ -5,6 +5,7 @@ const News = () => {
   const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
 
   // Toggle dark mode
   const toggleTheme = () => {
@@ -13,16 +14,13 @@ const News = () => {
   };
 
   const getData = async () => {
-    try {
-      const response = await fetch(`/api/news?q=${search}`);
-      const jsonData = await response.json();
-      console.log(jsonData.articles);
-      let dt = jsonData.articles.slice(0, 25);
-      setNewsData(dt);
-    } catch (error) {
-      console.error('Error fetching news:', error);
-      setNewsData([]); // Set empty array on error
-    }
+    const response = await fetch(
+      `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
+    );
+    const jsonData = await response.json();
+    console.log(jsonData.articles);
+    let dt = jsonData.articles.slice(0, 25);
+    setNewsData(dt);
   };
 
   useEffect(() => {
