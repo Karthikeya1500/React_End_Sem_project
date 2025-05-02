@@ -29,20 +29,6 @@ const News = () => {
         }
       );
       
-      console.log('Response status:', response.status); // Debug log
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Raw error response:', errorText); // Debug log
-        let errorData;
-        try {
-          errorData = JSON.parse(errorText);
-        } catch (e) {
-          errorData = { message: errorText };
-        }
-        throw new Error(errorData.message || `Failed to fetch news data. Status: ${response.status}`);
-      }
-      
       const jsonData = await response.json();
       console.log('API Response:', jsonData); // Debug log
       
