@@ -176,26 +176,23 @@ nav ul{
 .categoryBtn {
   width: 100%;
   overflow: hidden;
-  background-color: #ecf0f1;
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: relative;
-  white-space: nowrap;
+  padding: 1rem 0;
+  background: var(--background-color);
 }
 
 .buttonWrapper {
-  display: inline-flex;
+  display: flex;
   gap: 1rem;
-  animation: scrollButtons 20s linear infinite;
-  padding: 0 1rem;
+  animation: scroll 20s linear infinite;
+  width: max-content;
 }
 
 .buttonWrapper:hover {
   animation-play-state: paused;
 }
 
-@keyframes scrollButtons {
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
@@ -203,6 +200,32 @@ nav ul{
     transform: translateX(-50%);
   }
 }
+
+.category-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.category-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sports-button { background-color: #FF6B6B; color: white; }
+.politics-button { background-color: #4ECDC4; color: white; }
+.entertainment-button { background-color: #45B7D1; color: white; }
+.health-button { background-color: #96CEB4; color: white; }
+.fitness-button { background-color: #FFEEAD; color: #333; }
+.technology-button { background-color: #D4A5A5; color: white; }
+.business-button { background-color: #9B59B6; color: white; }
+.science-button { background-color: #3498DB; color: white; }
+.world-button { background-color: #E74C3C; color: white; }
+.india-button { background-color: #2ECC71; color: white; }
 
 /* Hide scrollbar */
 .categoryBtn::-webkit-scrollbar {

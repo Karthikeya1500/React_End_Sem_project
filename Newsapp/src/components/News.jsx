@@ -128,66 +128,29 @@ const News = () => {
       
       <div className="categoryBtn">
         <div className="buttonWrapper">
-          <button 
-            onClick={() => setSearch('sports')}
-            className="category-button sports-button"
-          >
-            Sports
-          </button>
-          <button 
-            onClick={() => setSearch('politics')}
-            className="category-button politics-button"
-          >
-            Politics
-          </button>
-          <button 
-            onClick={() => setSearch('entertainment')}
-            className="category-button entertainment-button"
-          >
-            Entertainment
-          </button>
-          <button 
-            onClick={() => setSearch('health')}
-            className="category-button health-button"
-          >
-            Health
-          </button>
-          <button 
-            onClick={() => setSearch('fitness')}
-            className="category-button fitness-button"
-          >
-            Fitness
-          </button>
-          <button 
-            onClick={() => setSearch('technology')}
-            className="category-button technology-button"
-          >
-            Technology
-          </button>
-          <button 
-            onClick={() => setSearch('business')}
-            className="category-button business-button"
-          >
-            Business
-          </button>
-          <button 
-            onClick={() => setSearch('science')}
-            className="category-button science-button"
-          >
-            Science
-          </button>
-          <button 
-            onClick={() => setSearch('world')}
-            className="category-button world-button"
-          >
-            World
-          </button>
-          <button 
-            onClick={() => setSearch('india')}
-            className="category-button india-button"
-          >
-            India
-          </button>
+          {/* First set of buttons */}
+          <button onClick={() => setSearch('sports')} className="category-button sports-button">Sports</button>
+          <button onClick={() => setSearch('politics')} className="category-button politics-button">Politics</button>
+          <button onClick={() => setSearch('entertainment')} className="category-button entertainment-button">Entertainment</button>
+          <button onClick={() => setSearch('health')} className="category-button health-button">Health</button>
+          <button onClick={() => setSearch('fitness')} className="category-button fitness-button">Fitness</button>
+          <button onClick={() => setSearch('technology')} className="category-button technology-button">Technology</button>
+          <button onClick={() => setSearch('business')} className="category-button business-button">Business</button>
+          <button onClick={() => setSearch('science')} className="category-button science-button">Science</button>
+          <button onClick={() => setSearch('world')} className="category-button world-button">World</button>
+          <button onClick={() => setSearch('india')} className="category-button india-button">India</button>
+          
+          {/* Duplicate set of buttons for seamless scrolling */}
+          <button onClick={() => setSearch('sports')} className="category-button sports-button">Sports</button>
+          <button onClick={() => setSearch('politics')} className="category-button politics-button">Politics</button>
+          <button onClick={() => setSearch('entertainment')} className="category-button entertainment-button">Entertainment</button>
+          <button onClick={() => setSearch('health')} className="category-button health-button">Health</button>
+          <button onClick={() => setSearch('fitness')} className="category-button fitness-button">Fitness</button>
+          <button onClick={() => setSearch('technology')} className="category-button technology-button">Technology</button>
+          <button onClick={() => setSearch('business')} className="category-button business-button">Business</button>
+          <button onClick={() => setSearch('science')} className="category-button science-button">Science</button>
+          <button onClick={() => setSearch('world')} className="category-button world-button">World</button>
+          <button onClick={() => setSearch('india')} className="category-button india-button">India</button>
         </div>
       </div>
       
