@@ -5,6 +5,7 @@ const News = () => {
   const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
   // Toggle dark mode
@@ -14,19 +15,13 @@ const News = () => {
   };
 
   const getData = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(
-        `/api/news?search=${search}`,
-        {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          }
-        }
+        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
       );
       if (!response.ok) {
-        throw new Error(`Failed to fetch news data: ${response.status} ${response.statusText}`);
+        throw new Error('Failed to fetch news data');
       }
       const jsonData = await response.json();
       console.log(jsonData.articles);
@@ -34,13 +29,15 @@ const News = () => {
       setNewsData(dt);
     } catch (error) {
       console.error('Error fetching news:', error);
-      // You might want to show an error message to the user here
+      setNewsData([]); // Set empty array instead of null to show loading state
+    } finally {
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     getData();
-  }, [search]); 
+  }, [search]);
 
   const handleInput = (e) => {
     console.log(e.target.value);
@@ -50,6 +47,22 @@ const News = () => {
   const userInput = (event) => {
     setSearch(event.target.value);
   };
+
+  // Loading skeleton component
+  const LoadingSkeleton = () => (
+    <div className="cardContainer">
+      {[...Array(6)].map((_, index) => (
+        <div className="card loading-skeleton" key={index}>
+          <div className="skeleton-image"></div>
+          <div className="content">
+            <div className="skeleton-title"></div>
+            <div className="skeleton-text"></div>
+            <div className="skeleton-button"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div>
@@ -217,7 +230,17 @@ const News = () => {
         </div>
       </div>
       
-      <div>{newsData ? <Card data={newsData} /> : null}</div>
+      <div>
+        {isLoading ? (
+          <LoadingSkeleton />
+        ) : newsData && newsData.length > 0 ? (
+          <Card data={newsData} />
+        ) : (
+          <div className="no-results">
+            <p>No news articles found. Try a different search term.</p>
+          </div>
+        )}
+      </div>
       <div className="footer">
         <p>© 2025 DailyDrop. All rights reserved.</p>
       </div>
