@@ -18,8 +18,6 @@ const News = () => {
     setIsLoading(true);
     setError(null);
     try {
-      console.log('Fetching news for search term:', search);
-      
       const response = await fetch(
         `/api/news?search=${encodeURIComponent(search)}`,
         {
@@ -31,7 +29,6 @@ const News = () => {
       );
       
       const jsonData = await response.json();
-      console.log('API Response:', jsonData);
       
       if (!response.ok) {
         throw new Error(jsonData.message || 'Failed to fetch news data');
