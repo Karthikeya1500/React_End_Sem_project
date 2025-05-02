@@ -1,8 +1,9 @@
 export default async function handler(req, res) {
   const { search } = req.query;
-  const API_KEY = process.env.NEWS_API_KEY;
+  const API_KEY = process.env.VITE_NEWS_API_KEY;
 
   if (!API_KEY) {
+    console.error('API Key is missing:', process.env);
     return res.status(500).json({ 
       status: 'error',
       message: 'API key is missing. Please check your environment variables.' 
