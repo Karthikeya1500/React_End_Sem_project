@@ -7,7 +7,6 @@ const News = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
   // Toggle dark mode
   const toggleTheme = () => {
@@ -19,8 +18,16 @@ const News = () => {
     setIsLoading(true);
     setError(null);
     try {
+      const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+      
+      if (!API_KEY) {
+        throw new Error('API key is missing. Please check your .env file.');
+      }
+
+      console.log('Fetching news with API Key:', API_KEY); // Debug log
+
       const response = await fetch(
-        `/api/news?search=${search}`,
+        `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&pageSize=25&apiKey=${API_KEY}`,
         {
           method: 'GET',
           headers: {
@@ -28,6 +35,12 @@ const News = () => {
           }
         }
       );
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('API Error Response:', errorData); // Debug log
+        throw new Error(errorData.message || 'Failed to fetch news data');
+      }
       
       const jsonData = await response.json();
       console.log('API Response:', jsonData); // Debug log
@@ -37,14 +50,34 @@ const News = () => {
       }
       
       if (!jsonData.articles || jsonData.articles.length === 0) {
-        throw new Error('No articles found');
+        // Try a different search term if no results
+        const fallbackResponse = await fetch(
+          `https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=25&apiKey=${API_KEY}`,
+          {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          }
+        );
+        
+        if (!fallbackResponse.ok) {
+          throw new Error('Failed to fetch fallback news data');
+        }
+        
+        const fallbackData = await fallbackResponse.json();
+        if (fallbackData.articles && fallbackData.articles.length > 0) {
+          setNewsData(fallbackData.articles);
+          return;
+        }
+        
+        throw new Error('No articles found. Please try a different search term.');
       }
       
-      let dt = jsonData.articles.slice(0, 25);
-      setNewsData(dt);
+      setNewsData(jsonData.articles);
     } catch (error) {
       console.error('Error fetching news:', error);
-      setError(error.message || 'Failed to load news. Please try again later.');
+      setError(error.message || 'Failed to load news. Please check your API key and try again.');
       setNewsData([]);
     } finally {
       setIsLoading(false);
