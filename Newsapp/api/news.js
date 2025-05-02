@@ -1,12 +1,21 @@
 export default async function handler(req, res) {
   const { search } = req.query;
-  const API_KEY = process.env.VITE_NEWS_API_KEY;
+  
+  // Try different environment variable names
+  const API_KEY = process.env.NEWS_API_KEY || 
+                 process.env.VITE_NEWS_API_KEY || 
+                 process.env.REACT_APP_NEWS_API_KEY;
+
+  console.log('Environment variables:', {
+    NEWS_API_KEY: process.env.NEWS_API_KEY,
+    VITE_NEWS_API_KEY: process.env.VITE_NEWS_API_KEY,
+    REACT_APP_NEWS_API_KEY: process.env.REACT_APP_NEWS_API_KEY
+  });
 
   if (!API_KEY) {
-    console.error('API Key is missing:', process.env);
     return res.status(500).json({ 
       status: 'error',
-      message: 'API key is missing. Please check your environment variables.' 
+      message: 'API key is missing. Please check your environment variables in Vercel settings.' 
     });
   }
 
