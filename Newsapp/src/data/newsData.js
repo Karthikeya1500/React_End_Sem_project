@@ -1,524 +1,597 @@
 export const newsData = {
   articles: [
-    // Sports Articles
+    // General Articles (12) - First Page
     {
       title: "India Wins Cricket World Cup 2024",
-      description: "In a historic victory, India clinched the Cricket World Cup 2024 after a nail-biting final against Australia. Virat Kohli's masterful century and Jasprit Bumrah's crucial wickets led the team to a 5-wicket victory. The nation erupted in celebration as the Men in Blue lifted the trophy for the third time.",
+      description: "In a historic victory, India clinched the Cricket World Cup 2024 after a nail-biting final against Australia. Virat Kohli's masterful century and Jasprit Bumrah's crucial wickets led the team to a 5-wicket victory.",
       urlToImage: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/cricket-world-cup",
-      category: "sports"
+      url: "https://www.espncricinfo.com/series/icc-cricket-world-cup-2024-1234567/india-vs-australia-final-1234567",
+      category: "general"
     },
+    {
+      title: "Lok Sabha Elections 2024: Results Announced",
+      description: "The 2024 Lok Sabha elections witnessed a historic voter turnout of 67.8%, the highest in Indian electoral history. Early trends show a close contest between major political parties.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.thehindu.com/elections/lok-sabha/lok-sabha-elections-2024-results/article12345678.ece",
+      category: "general"
+    },
+    {
+      title: "Bollywood's Biggest Blockbuster",
+      description: "The new Indian film 'Swatantra' has broken box office records worldwide, becoming the highest grossing Indian film ever. With a global collection of ₹2000 crore, the film has surpassed previous records.",
+      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.filmfare.com/news/bollywood/swatantra-box-office-record-1234567",
+      category: "general"
+    },
+    {
+      title: "New Medical Breakthrough",
+      description: "Indian scientists developed a revolutionary treatment for diabetes using stem cell therapy. The new treatment has shown 85% success rate in clinical trials and could potentially cure Type 1 diabetes.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.thelancet.com/journals/india/medical-breakthrough-diabetes-1234567890",
+      category: "general"
+    },
+    {
+      title: "AI Revolution in India",
+      description: "Indian startups lead the way in AI innovation with breakthrough applications. From healthcare to agriculture, AI solutions are transforming industries. The sector attracted $2 billion in investments last quarter.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.techcrunch.com/india/ai-revolution-2024",
+      category: "general"
+    },
+    {
+      title: "Economic Growth Milestone",
+      description: "India becomes world's third largest economy, surpassing Japan and Germany in GDP. The country's GDP reached $5 trillion, marking a historic achievement in economic development.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.economist.com/india/economic-growth-milestone-2024",
+      category: "general"
+    },
+    {
+      title: "Olympics 2024: India's Medal Tally",
+      description: "Indian athletes made history at the Paris Olympics 2024, securing their best-ever performance with 15 medals including 5 gold. Neeraj Chopra defended his javelin title.",
+      urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.olympics.com/en/news/india-record-medal-tally-paris-2024",
+      category: "general"
+    },
+    {
+      title: "New Cabinet Ministers Sworn In",
+      description: "Prime Minister Narendra Modi announced his new cabinet with a focus on youth and technology. The 78-member council of ministers includes 12 women and 27 first-time MPs.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.indiatoday.in/india/story/new-cabinet-ministers-sworn-in-2024-1234567",
+      category: "general"
+    },
+    {
+      title: "Oscar Nominations 2024",
+      description: "Indian films and artists received a record 12 Oscar nominations this year. 'The Last Letter' leads with 5 nominations including Best Picture. This marks a historic moment for Indian cinema.",
+      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.oscars.org/news/indian-films-oscar-nominations-2024",
+      category: "general"
+    },
+    {
+      title: "Mental Health Awareness",
+      description: "The government launched a nationwide mental health awareness campaign focusing on youth. The initiative includes school programs, helplines, and community support groups.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.who.int/india/news/mental-health-awareness-campaign-1234567890",
+      category: "general"
+    },
+    {
+      title: "5G Rollout Complete",
+      description: "India completes nationwide 5G rollout, becoming fastest growing 5G market. The network covers 98% of urban areas and 85% of rural regions. This marks a new era in digital connectivity.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.wired.com/india/5g-rollout-complete-2024",
+      category: "general"
+    },
+    {
+      title: "Cultural Heritage Recognition",
+      description: "UNESCO adds three new Indian sites to World Heritage list. The ancient temples of Tamil Nadu, the historic forts of Rajasthan, and the traditional water management systems receive global recognition.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.unesco.org/india-heritage-sites-2024",
+      category: "general"
+    },
+
+    // Sports Articles (12)
     {
       title: "Olympics 2024: India's Medal Tally Reaches Record High",
       description: "Indian athletes made history at the Paris Olympics 2024, securing their best-ever performance with 15 medals including 5 gold. Neeraj Chopra defended his javelin title, while the women's hockey team won their first-ever Olympic gold. The nation celebrates this unprecedented achievement in sports.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/olympics-2024",
+      url: "https://www.olympics.com/en/news/india-record-medal-tally-paris-2024",
       category: "sports"
     },
     {
       title: "Neeraj Chopra Wins Diamond League",
       description: "Olympic champion Neeraj Chopra continued his golden run by clinching the Diamond League title in javelin throw. His winning throw of 89.94 meters set a new national record and placed him among the world's elite throwers. This victory marks his third consecutive Diamond League win.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/neeraj-chopra",
+      url: "https://www.worldathletics.org/competitions/diamond-league/news/neeraj-chopra-wins-diamond-league-2024",
       category: "sports"
     },
     {
       title: "IPL 2024: New Teams Announced",
       description: "The BCCI has announced two new teams for IPL 2024, expanding the tournament to 12 teams. Ahmedabad and Lucknow will join the league with record-breaking franchise fees. The new teams will participate in a mega auction scheduled for December 2023.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/ipl-2024",
+      url: "https://www.iplt20.com/news/ipl-2024-new-teams-announced",
       category: "sports"
     },
     {
       title: "Football: India Qualifies for Asian Cup",
       description: "In a historic achievement, the Indian football team qualified for the AFC Asian Cup 2024 after a dramatic 2-1 victory against Qatar. Sunil Chhetri's brace in the final minutes secured India's spot in the tournament for the first time in 12 years.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/football-asian-cup",
+      url: "https://www.the-aiff.com/news/india-qualifies-for-afc-asian-cup-2024",
       category: "sports"
     },
     {
       title: "Badminton: PV Sindhu Wins World Championship",
       description: "PV Sindhu created history by becoming the first Indian to win three World Championship titles in badminton. Her dominant performance in the final against Carolina Marin showcased her exceptional skills and determination. This victory cements her position as one of India's greatest athletes.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/pv-sindhu",
+      url: "https://bwfworldchampionships.bwfbadminton.com/news/pv-sindhu-wins-third-world-championship",
       category: "sports"
     },
     {
       title: "Tennis: Sania Mirza's Final Tournament",
       description: "Sania Mirza bid farewell to professional tennis after winning her final doubles tournament at the Australian Open. The six-time Grand Slam champion received a standing ovation as she ended her illustrious 20-year career. Her legacy as India's most successful tennis player remains unmatched.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/sania-mirza",
+      url: "https://www.ausopen.com/news/sania-mirza-final-tournament",
       category: "sports"
     },
     {
       title: "Hockey: India Wins Asian Games Gold",
       description: "The Indian men's hockey team won gold at the Asian Games 2024, defeating Pakistan 3-1 in a thrilling final. This victory secured direct qualification for the Paris Olympics and marked India's return to the top of Asian hockey after 12 years.",
       urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/hockey-gold",
+      url: "https://www.asianhockey.org/news/india-wins-asian-games-gold-2024",
+      category: "sports"
+    },
+    {
+      title: "Boxing: Nikhat Zareen Wins World Title",
+      description: "Indian boxer Nikhat Zareen won her second consecutive World Championship title in the 52kg category. Her technical brilliance and aggressive style dominated the tournament, making her one of India's most successful boxers.",
+      urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.iba.sport/news/nikhat-zareen-wins-world-title-2024",
+      category: "sports"
+    },
+    {
+      title: "Wrestling: Bajrang Punia Returns with Gold",
+      description: "Olympic medalist Bajrang Punia made a triumphant return to competitive wrestling, winning gold at the Asian Championships. His victory after a year-long break from competition marks a strong comeback for the Indian wrestling star.",
+      urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.uww.org/news/bajrang-punia-returns-with-gold",
+      category: "sports"
+    },
+    {
+      title: "Shooting: Manu Bhaker Breaks World Record",
+      description: "Indian shooter Manu Bhaker broke the world record in the 10m air pistol event at the ISSF World Cup. Her perfect score of 594 in the qualification round and 252.1 in the final set new benchmarks in the sport.",
+      urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.issf-sports.org/news/manu-bhaker-breaks-world-record",
+      category: "sports"
+    },
+    {
+      title: "Athletics: Indian Relay Team Sets Asian Record",
+      description: "The Indian men's 4x400m relay team set a new Asian record at the World Athletics Championships. Their time of 2:59.05 seconds secured them a historic silver medal and placed them among the world's elite relay teams.",
+      urlToImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.worldathletics.org/news/india-relay-team-asian-record",
       category: "sports"
     },
 
-    // Politics Articles
-    {
-      title: "Lok Sabha Elections 2024: Results Announced",
-      description: "The 2024 Lok Sabha elections witnessed a historic voter turnout of 67.8%, the highest in Indian electoral history. The counting process, which began at 8 AM, is expected to continue late into the night. Early trends show a close contest between major political parties.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/lok-sabha-elections",
-      category: "politics"
-    },
+    // Politics Articles (12)
     {
       title: "New Cabinet Ministers Sworn In",
       description: "Prime Minister Narendra Modi announced his new cabinet with a focus on youth and technology. The 78-member council of ministers includes 12 women and 27 first-time MPs. Key portfolios have been allocated to experienced leaders and young technocrats.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/cabinet-ministers",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.indiatoday.in/india/story/new-cabinet-ministers-sworn-in-2024-1234567",
       category: "politics"
     },
     {
       title: "India-US Relations Strengthen",
       description: "Bilateral talks between India and the US resulted in new trade agreements worth $50 billion and enhanced defense partnerships. The two nations agreed to collaborate on semiconductor manufacturing and space exploration. This marks a significant step in Indo-US strategic relations.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/india-us-relations",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.hindustantimes.com/india-news/india-us-relations-strengthen-with-new-trade-deals-1234567890",
       category: "politics"
     },
     {
       title: "Economic Reforms Announced",
       description: "The government announced major economic reforms focusing on digital economy and infrastructure development. The new policies aim to boost manufacturing, create 10 million jobs, and attract $100 billion in foreign investment. Special emphasis has been placed on rural development and MSME growth.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/economic-reforms",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.business-standard.com/economy/news/economic-reforms-announced-focus-on-digital-economy-1234567890",
       category: "politics"
     },
     {
       title: "Supreme Court Landmark Judgment",
       description: "The Supreme Court delivered a historic judgment on privacy rights and data protection. The ruling establishes new guidelines for digital privacy and sets strict limits on government surveillance. This decision is expected to shape India's digital future and protect citizens' fundamental rights.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/supreme-court",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.livemint.com/news/india/supreme-court-delivers-landmark-judgment-on-privacy-rights-1234567890",
       category: "politics"
     },
     {
       title: "State Elections: Key Battlegrounds",
       description: "Analysis of upcoming state elections reveals key battlegrounds and emerging political trends. Issues like employment, inflation, and infrastructure development are dominating the discourse. Political analysts predict a close contest in several states with new alliances forming.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/state-elections",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.indianexpress.com/political-pulse/state-elections-2024-key-battlegrounds-analysis-1234567",
       category: "politics"
     },
     {
       title: "Foreign Policy Achievements",
       description: "India's growing global influence was highlighted at the G20 summit and UN meetings. The country successfully mediated several international disputes and led initiatives on climate change and digital cooperation. These achievements strengthen India's position as a global leader.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/foreign-policy",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.timesofindia.com/india/india-foreign-policy-achievements-g20-un-1234567890",
       category: "politics"
     },
     {
       title: "Digital India Initiative",
       description: "The government launched a new phase of Digital India with focus on rural connectivity. The initiative aims to provide high-speed internet to all villages and promote digital literacy. This will bridge the urban-rural digital divide and create new opportunities in rural areas.",
-      urlToImage: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/digital-india",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.financialexpress.com/technology/digital-india-initiative-new-phase-rural-connectivity-1234567",
+      category: "politics"
+    },
+    {
+      title: "New Education Policy Implementation",
+      description: "The government announced the successful implementation of the New Education Policy across all states. The reforms focus on holistic development, skill-based learning, and digital education. Early results show improved learning outcomes and increased enrollment rates.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.thehindu.com/education/new-education-policy-implementation-success/article12345678.ece",
+      category: "politics"
+    },
+    {
+      title: "Healthcare Reforms Announced",
+      description: "Major healthcare reforms were announced, focusing on universal health coverage and digital health infrastructure. The new policies aim to provide quality healthcare to all citizens and strengthen the public health system. Special emphasis has been placed on rural healthcare access.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.hindustantimes.com/india-news/healthcare-reforms-announced-universal-coverage-1234567890",
+      category: "politics"
+    },
+    {
+      title: "Infrastructure Development Plan",
+      description: "The government unveiled a comprehensive infrastructure development plan worth ₹100 lakh crore. The plan focuses on modernizing transportation, energy, and digital infrastructure. This is expected to create millions of jobs and boost economic growth.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.business-standard.com/economy/news/infrastructure-development-plan-announced-1234567890",
+      category: "politics"
+    },
+    {
+      title: "Climate Change Action Plan",
+      description: "India announced an ambitious climate change action plan, committing to achieve net-zero emissions by 2070. The plan includes massive investments in renewable energy, electric mobility, and sustainable agriculture. This positions India as a global leader in climate action.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.livemint.com/news/india/climate-change-action-plan-announced-1234567890",
+      category: "politics"
+    },
+    {
+      title: "Digital Governance Reforms",
+      description: "The government announced new digital governance reforms to improve service delivery and transparency. The initiative includes AI-powered citizen services and blockchain-based document verification. This marks a significant step in modernizing governance.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.financialexpress.com/technology/digital-governance-reforms-announced-1234567",
+      category: "politics"
+    },
+    {
+      title: "Rural Development Initiatives",
+      description: "New rural development initiatives were launched to boost economic growth in villages. The programs focus on digital literacy, self-employment, and infrastructure development. This aims to bridge the urban-rural divide and create new opportunities.",
+      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      url: "https://www.ruraldevelopment.gov.in/new-initiatives-2024",
       category: "politics"
     },
 
-    // Entertainment Articles
-    {
-      title: "Bollywood's Biggest Blockbuster",
-      description: "The new Indian film 'Swatantra' has broken box office records worldwide, becoming the highest grossing Indian film ever. With a global collection of ₹2000 crore, the film has surpassed previous records. The historical drama has received critical acclaim and audience love alike.",
-      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/bollywood-blockbuster",
-      category: "entertainment"
-    },
-    {
-      title: "Oscar Nominations 2024",
-      description: "Indian films and artists received a record 12 Oscar nominations this year. 'The Last Letter' leads with 5 nominations including Best Picture. This marks a historic moment for Indian cinema on the global stage.",
-      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/oscar-nominations",
-      category: "entertainment"
-    },
+    // Entertainment Articles (12)
     {
       title: "Music Festival Season Begins",
       description: "India's biggest music festivals kick off with international and local artists performing. The season features over 50 festivals across 20 cities, showcasing diverse genres from classical to electronic music. Special focus on promoting independent artists and regional music.",
       urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/music-festival",
+      url: "https://www.rollingstoneindia.com/music-festival-season-2024",
       category: "entertainment"
     },
     {
       title: "OTT Platform Growth",
       description: "Indian OTT platforms see record growth with original content gaining global recognition. Subscriptions have crossed 100 million, with regional content driving 60% of the growth. New platforms are entering the market with innovative content strategies.",
       urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/ott-growth",
+      url: "https://www.business-standard.com/technology/ott-platform-growth-india-1234567890",
       category: "entertainment"
     },
     {
       title: "Celebrity Wedding of the Year",
       description: "Bollywood's power couple tied the knot in a grand ceremony attended by industry stars. The wedding, held in Udaipur, was a three-day celebration featuring traditional rituals and modern entertainment. The event was a perfect blend of Indian culture and contemporary style.",
       urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/celebrity-wedding",
+      url: "https://www.vogue.in/celebrity/bollywood-wedding-of-the-year-2024",
       category: "entertainment"
     },
     {
       title: "New Streaming Records",
       description: "Indian web series 'The Last Kingdom' broke global streaming records with its latest season. The show garnered 50 million views in its first week, making it the most-watched Indian series worldwide. Its success marks a new era for Indian digital content.",
       urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/streaming-records",
+      url: "https://www.hollywoodreporter.com/tv/tv-news/indian-web-series-streaming-records-1234567890",
       category: "entertainment"
     },
     {
       title: "Film Festival Success",
       description: "Indian films won major awards at international film festivals. 'The Silent River' won the Palme d'Or at Cannes, while 'Midnight Dreams' received the Golden Bear at Berlin. These victories highlight the growing global recognition of Indian cinema.",
       urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/film-festival",
+      url: "https://www.variety.com/news/indian-films-international-festivals-1234567890",
       category: "entertainment"
     },
     {
       title: "Music Industry Milestone",
       description: "The Indian music industry crossed the $1 billion revenue mark for the first time. Streaming services contributed 70% of the revenue, with regional music seeing 200% growth. This milestone reflects the industry's successful digital transformation.",
       urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/music-industry",
+      url: "https://www.billboard.com/music/music-news/indian-music-industry-milestone-1234567890",
+      category: "entertainment"
+    },
+    {
+      title: "New Film Studio Launched",
+      description: "A new state-of-the-art film studio was launched in Mumbai, equipped with the latest technology and sustainable practices. The studio aims to attract international productions and boost India's position as a global filmmaking hub.",
+      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.hollywoodreporter.com/business/new-film-studio-mumbai-1234567890",
+      category: "entertainment"
+    },
+    {
+      title: "Regional Cinema Growth",
+      description: "Regional cinema is experiencing unprecedented growth, with films from South India and other regions gaining national and international recognition. The success of these films is changing the landscape of Indian cinema.",
+      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.filmcompanion.in/regional-cinema-growth-2024",
+      category: "entertainment"
+    },
+    {
+      title: "Digital Content Revolution",
+      description: "Indian digital content creators are making waves globally, with their work being recognized at international platforms. The rise of short-form content and innovative storytelling is transforming the entertainment landscape.",
+      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.forbes.com/digital-content-revolution-india-1234567890",
+      category: "entertainment"
+    },
+    {
+      title: "Theater Revival",
+      description: "Traditional theater is experiencing a revival in India, with new productions combining classical art forms with modern technology. The movement is attracting young audiences and preserving cultural heritage.",
+      urlToImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.thehindu.com/entertainment/theatre/theater-revival-india-2024/article12345678.ece",
       category: "entertainment"
     },
 
-    // Health Articles
-    {
-      title: "New Medical Breakthrough",
-      description: "Indian scientists developed a revolutionary treatment for diabetes using stem cell therapy. The new treatment has shown 85% success rate in clinical trials and could potentially cure Type 1 diabetes. This breakthrough could benefit millions of patients worldwide.",
-      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/medical-breakthrough",
-      category: "health"
-    },
-    {
-      title: "Mental Health Awareness",
-      description: "The government launched a nationwide mental health awareness campaign focusing on youth. The initiative includes school programs, helplines, and community support groups. This comes as studies show rising mental health issues among young Indians.",
-      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/mental-health",
-      category: "health"
-    },
+    // Health Articles (12)
     {
       title: "Ayurveda Research",
       description: "New research validates traditional Ayurvedic treatments for modern medical conditions. Clinical trials show promising results in treating chronic diseases. This could lead to integration of Ayurveda in mainstream healthcare.",
       urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/ayurveda-research",
+      url: "https://www.ncbi.nlm.nih.gov/research/ayurveda-modern-medicine-1234567890",
       category: "health"
     },
     {
       title: "Healthcare Infrastructure",
       description: "India's healthcare infrastructure ranks among top 10 globally in new WHO report. The country has added 50,000 new hospital beds and trained 1 million healthcare workers in the last year. This marks significant progress in healthcare accessibility.",
       urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/healthcare-infrastructure",
+      url: "https://www.who.int/publications/healthcare-infrastructure-india-1234567890",
       category: "health"
     },
     {
       title: "Vaccine Development",
       description: "Indian pharmaceutical companies developed new vaccines for tropical diseases. The vaccines target dengue, malaria, and chikungunya, showing 90% efficacy in trials. This could significantly reduce disease burden in tropical regions.",
       urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/vaccine-development",
+      url: "https://www.nature.com/india/vaccine-development-tropical-diseases-1234567890",
       category: "health"
     },
     {
       title: "Fitness Trends 2024",
       description: "New fitness trends emerge in India with focus on holistic wellness. Yoga-tech fusion, virtual reality workouts, and personalized nutrition plans are gaining popularity. The fitness industry is expected to grow by 25% this year.",
       urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/fitness-trends",
+      url: "https://www.healthline.com/fitness/india-fitness-trends-2024",
       category: "health"
     },
     {
       title: "Nutrition Research",
       description: "Study reveals benefits of traditional Indian diet for modern lifestyle diseases. Research shows traditional foods can prevent diabetes and heart disease. This could lead to revival of traditional dietary practices.",
       urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/nutrition-research",
+      url: "https://www.sciencedirect.com/nutrition/indian-diet-research-1234567890",
       category: "health"
     },
     {
       title: "Medical Tourism Growth",
       description: "India becomes top destination for medical tourism with advanced treatments. The sector grew by 30% last year, attracting patients from 78 countries. World-class facilities and affordable costs drive this growth.",
       urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/medical-tourism",
+      url: "https://www.medicaltourism.com/india-growth-2024",
+      category: "health"
+    },
+    {
+      title: "Telemedicine Revolution",
+      description: "Telemedicine services in India have transformed healthcare access, especially in rural areas. The sector has grown by 200% in the last year, with over 50 million consultations conducted online. This marks a new era in healthcare delivery.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.telemedicine.org/india-revolution-2024",
+      category: "health"
+    },
+    {
+      title: "Cancer Research Breakthrough",
+      description: "Indian researchers discovered a new method for early cancer detection using AI. The technology can identify cancer markers with 95% accuracy, potentially saving millions of lives through early intervention.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.cancerresearch.org/india-breakthrough-2024",
+      category: "health"
+    },
+    {
+      title: "Public Health Initiative",
+      description: "A new public health initiative aims to provide free health checkups to 100 million people. The program focuses on preventive care and early detection of diseases. This is expected to significantly improve public health outcomes.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.who.int/public-health/india-initiative-2024",
+      category: "health"
+    },
+    {
+      title: "Healthcare Technology",
+      description: "New healthcare technologies are transforming patient care in India. From AI-powered diagnostics to robotic surgery, these innovations are making healthcare more accessible and efficient.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.healthcareitnews.com/india-technology-2024",
+      category: "health"
+    },
+    {
+      title: "Mental Health Awareness",
+      description: "The government launched a nationwide mental health awareness campaign focusing on youth. The initiative includes school programs, helplines, and community support groups.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.who.int/india/news/mental-health-awareness-campaign-1234567890",
+      category: "health"
+    },
+    {
+      title: "Traditional Medicine Research",
+      description: "New research validates traditional Indian medicine practices. Studies show promising results in treating chronic conditions using ancient remedies. This could lead to integration of traditional and modern medicine.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.ncbi.nlm.nih.gov/research/traditional-medicine-india-1234567890",
+      category: "health"
+    },
+    {
+      title: "Healthcare Accessibility",
+      description: "New initiatives improve healthcare access in rural areas. Mobile clinics and telemedicine services reach remote villages, providing quality care to underserved populations.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.who.int/publications/healthcare-accessibility-india-1234567890",
       category: "health"
     },
 
-    // Technology Articles
-    {
-      title: "AI Revolution in India",
-      description: "Indian startups lead the way in AI innovation with breakthrough applications. From healthcare to agriculture, AI solutions are transforming industries. The sector attracted $2 billion in investments last quarter.",
-      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/ai-revolution",
-      category: "technology"
-    },
-    {
-      title: "5G Rollout Complete",
-      description: "India completes nationwide 5G rollout, becoming fastest growing 5G market. The network covers 98% of urban areas and 85% of rural regions. This marks a new era in digital connectivity for the country.",
-      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/5g-rollout",
-      category: "technology"
-    },
+    // Technology Articles (12)
     {
       title: "Space Tech Milestone",
       description: "ISRO achieves new milestone in reusable rocket technology. The successful test of the reusable launch vehicle marks a significant step in reducing space mission costs. This could revolutionize satellite launches.",
       urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/space-tech",
+      url: "https://www.space.com/isro-reusable-rocket-2024",
       category: "technology"
     },
     {
       title: "Startup Funding Boom",
       description: "Indian tech startups raise record funding in first quarter of 2024. The sector attracted $15 billion in investments, with 10 new unicorns emerging. This reflects growing confidence in Indian tech innovation.",
       urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/startup-funding",
+      url: "https://www.techcrunch.com/india/startup-funding-2024",
       category: "technology"
     },
     {
       title: "Cybersecurity Initiative",
       description: "Government launches new cybersecurity initiative to protect digital infrastructure. The program includes advanced threat detection systems and public awareness campaigns. This aims to make India's digital space more secure.",
       urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/cybersecurity",
+      url: "https://www.wired.com/security/india-cybersecurity-2024",
       category: "technology"
     },
     {
       title: "Quantum Computing Research",
       description: "Indian scientists make breakthrough in quantum computing research. The team developed a new quantum algorithm that could solve complex problems faster. This puts India at the forefront of quantum technology.",
       urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/quantum-computing",
+      url: "https://www.nature.com/quantum/india-research-2024",
       category: "technology"
     },
     {
       title: "Digital Payment Growth",
       description: "UPI transactions cross 10 billion mark in single month. The digital payment system continues to break records, with rural areas showing 200% growth. This reflects India's rapid digital transformation.",
       urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/digital-payment",
+      url: "https://www.financialexpress.com/digital-payment/upi-growth-2024",
       category: "technology"
     },
     {
-      title: "Smart Cities Progress",
-      description: "Smart Cities Mission achieves major milestones in urban development. 50 cities have implemented smart solutions for traffic, waste management, and energy efficiency. This improves quality of life for millions of citizens.",
+      title: "Semiconductor Manufacturing",
+      description: "India's first semiconductor manufacturing plant becomes operational. The facility will produce chips for various applications, reducing dependence on imports. This marks a significant step in India's tech self-reliance.",
       urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/smart-cities",
+      url: "https://www.techcrunch.com/hardware/india-semiconductor-2024",
+      category: "technology"
+    },
+    {
+      title: "EdTech Revolution",
+      description: "Indian EdTech companies are transforming education with innovative solutions. The sector has reached 50 million students, with personalized learning and AI-powered tutoring leading the way.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.edtechreview.in/india-revolution-2024",
+      category: "technology"
+    },
+    {
+      title: "Green Tech Innovation",
+      description: "Indian startups are leading in green technology innovation. From solar power to electric vehicles, these companies are developing sustainable solutions for a cleaner future.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.greentechmedia.com/india-innovation-2024",
+      category: "technology"
+    },
+    {
+      title: "Robotics Advancements",
+      description: "India's robotics industry is making significant strides in manufacturing and healthcare. New indigenous robots are being deployed in various sectors, increasing efficiency and safety.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.roboticsbusinessreview.com/india-advancements-2024",
+      category: "technology"
+    },
+    {
+      title: "AI in Healthcare",
+      description: "Indian hospitals adopt AI for better patient care. New AI systems help in early disease detection and personalized treatment plans. This is revolutionizing healthcare delivery in India.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.healthcareitnews.com/india-ai-healthcare-2024",
+      category: "technology"
+    },
+    {
+      title: "Blockchain Adoption",
+      description: "Indian businesses embrace blockchain technology for secure transactions. From banking to supply chain, blockchain solutions are improving transparency and efficiency across sectors.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.coindesk.com/india-blockchain-adoption-2024",
+      category: "technology"
+    },
+    {
+      title: "5G Implementation",
+      description: "India completes nationwide 5G rollout, becoming fastest growing 5G market. The network covers 98% of urban areas and 85% of rural regions. This marks a new era in digital connectivity.",
+      urlToImage: "https://images.unsplash.com/photo-1518770660439-4636199afbbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.wired.com/india/5g-rollout-complete-2024",
       category: "technology"
     },
 
-    // Business Articles
-    {
-      title: "Stock Market Records",
-      description: "Indian stock markets reach all-time high with strong economic indicators. The Sensex crossed 75,000 points for the first time, driven by robust corporate earnings and foreign investments. This reflects growing confidence in India's economic growth.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/stock-market",
-      category: "business"
-    },
-    {
-      title: "Startup Unicorn Boom",
-      description: "India adds 10 new unicorns in first quarter of 2024. The country now has 150 unicorns, second only to the US. This growth reflects the strength of India's startup ecosystem.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/startup-unicorns",
-      category: "business"
-    },
-    {
-      title: "Economic Growth Forecast",
-      description: "IMF raises India's growth forecast for 2024 to 7.5%. The country remains the fastest-growing major economy, driven by strong domestic demand and investment. This growth is expected to create millions of new jobs.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/economic-growth",
-      category: "business"
-    },
-    {
-      title: "Manufacturing Sector Growth",
-      description: "Make in India initiative results in record manufacturing output. The sector grew by 12% last quarter, creating 2 million new jobs. This marks significant progress in India's industrial development.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/manufacturing-growth",
-      category: "business"
-    },
-    {
-      title: "Foreign Investment Inflow",
-      description: "India receives record foreign direct investment in first quarter. The country attracted $25 billion in FDI, with manufacturing and technology sectors leading. This reflects global confidence in India's economic potential.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/foreign-investment",
-      category: "business"
-    },
-    {
-      title: "E-commerce Growth",
-      description: "Indian e-commerce market crosses $100 billion mark. The sector grew by 35% last year, with rural areas showing fastest growth. This reflects changing consumer behavior and digital adoption.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/ecommerce-growth",
-      category: "business"
-    },
-    {
-      title: "Banking Sector Reforms",
-      description: "Major banking sector reforms announced to boost credit growth. New policies aim to improve loan accessibility and reduce NPAs. This could significantly impact economic growth and financial inclusion.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/banking-reforms",
-      category: "business"
-    },
-    {
-      title: "Export Growth Record",
-      description: "India's exports reach record high with new trade agreements. The country achieved $500 billion in exports, with manufacturing and services leading growth. This marks significant progress in global trade.",
-      urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/export-growth",
-      category: "business"
-    },
-
-    // Science Articles
-    {
-      title: "Space Mission Success",
-      description: "ISRO's new mission to study black holes achieves major breakthrough. The satellite collected unprecedented data about black hole behavior. This could revolutionize our understanding of the universe.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/space-mission",
-      category: "science"
-    },
-    {
-      title: "Climate Research",
-      description: "Indian scientists discover new method to combat climate change. The breakthrough in carbon capture technology could significantly reduce greenhouse gas emissions. This could be a game-changer in global climate efforts.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/climate-research",
-      category: "science"
-    },
-    {
-      title: "Medical Research",
-      description: "Breakthrough in cancer research by Indian scientists. The new treatment method shows 90% success rate in early trials. This could revolutionize cancer treatment worldwide.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/medical-research",
-      category: "science"
-    },
-    {
-      title: "Renewable Energy",
-      description: "New solar technology developed by Indian researchers. The innovation increases solar panel efficiency by 40%. This could make solar energy more affordable and accessible.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/renewable-energy",
-      category: "science"
-    },
-    {
-      title: "Ocean Research",
-      description: "Deep sea exploration reveals new marine species. Indian scientists discovered 50 new species in the Indian Ocean. This expands our understanding of marine biodiversity.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/ocean-research",
-      category: "science"
-    },
-    {
-      title: "Wildlife Conservation",
-      description: "New conservation method helps increase tiger population. India's tiger count reaches 4,000, highest in the world. This marks success in wildlife conservation efforts.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/wildlife-conservation",
-      category: "science"
-    },
-    {
-      title: "Archaeological Discovery",
-      description: "Ancient civilization remains discovered in western India. The findings date back 5,000 years and reveal new aspects of early Indian civilization. This could rewrite history books.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/archaeological-discovery",
-      category: "science"
-    },
-    {
-      title: "Physics Breakthrough",
-      description: "Indian physicists contribute to quantum theory advancement. The research could lead to new technologies in computing and communication. This puts India at the forefront of physics research.",
-      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/physics-breakthrough",
-      category: "science"
-    },
-
-    // World Articles
-    {
-      title: "Global Summit Success",
-      description: "India plays key role in global climate summit negotiations. The country proposed innovative solutions for reducing carbon emissions. This leadership position strengthens India's global standing.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/global-summit",
-      category: "world"
-    },
-    {
-      title: "International Relations",
-      description: "India strengthens ties with ASEAN countries. New trade agreements and cultural exchanges mark growing cooperation. This enhances India's influence in Southeast Asia.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/international-relations",
-      category: "world"
-    },
-    {
-      title: "Global Economy",
-      description: "India's role in global supply chains grows significantly. The country becomes a key manufacturing hub for electronics and pharmaceuticals. This strengthens India's position in global trade.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/global-economy",
-      category: "world"
-    },
-    {
-      title: "Cultural Exchange",
-      description: "Indian culture festival attracts record visitors worldwide. The event showcased diverse aspects of Indian art, music, and cuisine. This promotes cultural understanding and tourism.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/cultural-exchange",
-      category: "world"
-    },
-    {
-      title: "Global Health",
-      description: "India contributes to global health initiatives. The country supplied vaccines and medical expertise to 50 nations. This demonstrates India's commitment to global health security.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/global-health",
-      category: "world"
-    },
-    {
-      title: "International Trade",
-      description: "New trade agreements boost India's global presence. The country signed deals worth $100 billion with various nations. This enhances India's economic integration with the world.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/international-trade",
-      category: "world"
-    },
-    {
-      title: "Global Education",
-      description: "Indian universities rise in global rankings. Three institutions entered the top 100, reflecting improved research and teaching standards. This enhances India's reputation in higher education.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/global-education",
-      category: "world"
-    },
-    {
-      title: "International Sports",
-      description: "India hosts major international sporting events. The country successfully organized the World Athletics Championships and Asian Games. This showcases India's capability in hosting global events.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/international-sports",
-      category: "world"
-    },
-
-    // India Articles
-    {
-      title: "Economic Growth",
-      description: "India becomes world's third largest economy. The country surpassed Japan and Germany in GDP, marking a historic achievement. This reflects India's rapid economic development.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/economic-growth",
-      category: "india"
-    },
+    // India Articles (12)
     {
       title: "Infrastructure Development",
-      description: "Major infrastructure projects transform Indian cities. New metro systems, highways, and smart cities improve urban living. This marks significant progress in India's development.",
+      description: "Major infrastructure projects transform Indian cities. New metro systems, highways, and smart cities improve urban living. The government's ₹100 lakh crore infrastructure plan is creating millions of jobs and boosting economic growth.",
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/infrastructure-development",
+      url: "https://www.business-standard.com/infrastructure/india-development-2024",
       category: "india"
     },
     {
-      title: "Cultural Heritage",
-      description: "UNESCO adds new Indian sites to World Heritage list. Three historical monuments receive recognition for their cultural significance. This preserves India's rich heritage for future generations.",
+      title: "Education Reforms Success",
+      description: "New education policy shows positive results across India. Student performance improves by 25% in national assessments, with special focus on digital learning and skill development. The reforms are transforming India's education landscape.",
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/cultural-heritage",
+      url: "https://www.thehindu.com/education/india-education-reforms-2024",
       category: "india"
     },
     {
-      title: "Education Reforms",
-      description: "New education policy shows positive results. Student performance improves by 25% in national assessments. This marks progress in India's education system.",
+      title: "Rural Development Progress",
+      description: "Digital initiatives transform rural India. Internet connectivity reaches 90% of villages, and digital services are improving healthcare, education, and agriculture. This is bridging the urban-rural divide and creating new opportunities.",
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/education-reforms",
+      url: "https://www.ruraldevelopment.gov.in/progress-report-2024",
       category: "india"
     },
     {
-      title: "Rural Development",
-      description: "Digital initiatives transform rural India. Internet connectivity and digital services reach 90% of villages. This bridges the urban-rural divide and creates new opportunities.",
+      title: "Tourism Growth Record",
+      description: "India sets new record in international tourist arrivals. The country welcomed 20 million foreign tourists last year, with heritage sites and cultural festivals driving growth. This boosts the economy and promotes cultural exchange.",
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/rural-development",
-      category: "india"
-    },
-    {
-      title: "Tourism Growth",
-      description: "India sets new record in international tourist arrivals. The country welcomed 20 million foreign tourists last year. This boosts the economy and promotes cultural exchange.",
-      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/tourism-growth",
+      url: "https://www.tourism.gov.in/india-tourism-growth-2024",
       category: "india"
     },
     {
       title: "Agricultural Innovation",
-      description: "New farming techniques boost agricultural productivity. Smart farming and sustainable practices increase crop yields by 30%. This ensures food security and farmer prosperity.",
+      description: "New farming techniques boost agricultural productivity across India. Smart farming and sustainable practices increase crop yields by 30%. This ensures food security and improves farmer prosperity.",
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/agricultural-innovation",
+      url: "https://www.agriculture.gov.in/innovation-report-2024",
       category: "india"
     },
     {
-      title: "Social Development",
-      description: "India achieves major milestones in social indicators. Life expectancy, literacy, and gender equality show significant improvement. This reflects progress in human development.",
+      title: "Social Development Achievements",
+      description: "India achieves major milestones in social indicators. Life expectancy reaches 72 years, literacy rate crosses 85%, and gender equality shows significant improvement. This reflects progress in human development.",
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://example.com/social-development",
+      url: "https://www.socialdevelopment.gov.in/achievements-2024",
+      category: "india"
+    },
+    {
+      title: "Startup Ecosystem Growth",
+      description: "India's startup ecosystem reaches new heights with 100 new unicorns in 2024. The country now has the second-largest number of unicorns globally, with technology and innovation driving growth across sectors.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.startupindia.gov.in/ecosystem-growth-2024",
+      category: "india"
+    },
+    {
+      title: "Environmental Conservation",
+      description: "India's environmental conservation efforts show significant results. Forest cover increases by 5%, tiger population reaches 4,000, and renewable energy capacity doubles. This marks progress in sustainable development.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.moef.gov.in/conservation-report-2024",
+      category: "india"
+    },
+    {
+      title: "Urban Development",
+      description: "Smart Cities Mission transforms urban living in India. 50 cities implement smart solutions for traffic, waste management, and energy efficiency. This improves quality of life for millions of citizens.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.smartcities.gov.in/urban-development-2024",
+      category: "india"
+    },
+    {
+      title: "Cultural Renaissance",
+      description: "India experiences a cultural renaissance with renewed interest in traditional arts and crafts. Digital platforms help preserve and promote heritage, while new cultural centers attract global attention.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.culture.gov.in/renaissance-2024",
+      category: "india"
+    },
+    {
+      title: "Healthcare Infrastructure",
+      description: "India's healthcare infrastructure ranks among top 10 globally in new WHO report. The country has added 50,000 new hospital beds and trained 1 million healthcare workers in the last year.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.who.int/publications/healthcare-infrastructure-india-1234567890",
+      category: "india"
+    },
+    {
+      title: "Digital India Initiative",
+      description: "The government launched a new phase of Digital India with focus on rural connectivity. The initiative aims to provide high-speed internet to all villages and promote digital literacy.",
+      urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.financialexpress.com/technology/digital-india-initiative-new-phase-rural-connectivity-1234567",
       category: "india"
     }
   ]
