@@ -18,8 +18,10 @@ const News = () => {
     setIsLoading(true);
     setError(null);
     try {
+      console.log('Fetching news for search term:', search);
+      
       const response = await fetch(
-        `/api/news?search=${search}`,
+        `/api/news?search=${encodeURIComponent(search)}`,
         {
           method: 'GET',
           headers: {
@@ -28,40 +30,18 @@ const News = () => {
         }
       );
       
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to fetch news data');
-      }
-      
       const jsonData = await response.json();
-      console.log('API Response:', jsonData); // Debug log
+      console.log('API Response:', jsonData);
+      
+      if (!response.ok) {
+        throw new Error(jsonData.message || 'Failed to fetch news data');
+      }
       
       if (jsonData.status === 'error') {
         throw new Error(jsonData.message || 'API Error');
       }
       
       if (!jsonData.articles || jsonData.articles.length === 0) {
-        // Try a different search term if no results
-        const fallbackResponse = await fetch(
-          `/api/news?search=general`,
-          {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json'
-            }
-          }
-        );
-        
-        if (!fallbackResponse.ok) {
-          throw new Error('Failed to fetch fallback news data');
-        }
-        
-        const fallbackData = await fallbackResponse.json();
-        if (fallbackData.articles && fallbackData.articles.length > 0) {
-          setNewsData(fallbackData.articles);
-          return;
-        }
-        
         throw new Error('No articles found. Please try a different search term.');
       }
       

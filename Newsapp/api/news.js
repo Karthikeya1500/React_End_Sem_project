@@ -1,3 +1,5 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
+
 export default async function handler(req, res) {
   const { search } = req.query;
   
@@ -12,6 +14,9 @@ export default async function handler(req, res) {
     REACT_APP_NEWS_API_KEY: process.env.REACT_APP_NEWS_API_KEY
   });
 
+  // Debug logs
+  console.log('Request received:', { search, hasApiKey: !!API_KEY });
+
   if (!API_KEY) {
     return res.status(500).json({ 
       status: 'error',
@@ -20,17 +25,18 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&pageSize=25&apiKey=${API_KEY}`,
-      {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json'
-        }
+    const url = `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&pageSize=25&apiKey=${API_KEY}`;
+    console.log('Fetching from URL:', url);
+
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
       }
-    );
+    });
 
     const data = await response.json();
+    console.log('API Response:', data);
     
     if (data.status === 'error') {
       return res.status(400).json({
