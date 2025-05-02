@@ -5,7 +5,7 @@ const News = () => {
   const [search, setSearch] = useState("india");
   const [newsData, setNewsData] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
+  const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
   // Toggle dark mode
   const toggleTheme = () => {
@@ -14,13 +14,21 @@ const News = () => {
   };
 
   const getData = async () => {
-    const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
-    );
-    const jsonData = await response.json();
-    console.log(jsonData.articles);
-    let dt = jsonData.articles.slice(0, 25);
-    setNewsData(dt);
+    try {
+      const response = await fetch(
+        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
+      );
+      if (!response.ok) {
+        throw new Error('Failed to fetch news data');
+      }
+      const jsonData = await response.json();
+      console.log(jsonData.articles);
+      let dt = jsonData.articles.slice(0, 25);
+      setNewsData(dt);
+    } catch (error) {
+      console.error('Error fetching news:', error);
+      // You might want to show an error message to the user here
+    }
   };
 
   useEffect(() => {
