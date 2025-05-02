@@ -32,11 +32,12 @@ export async function fetchNews(search) {
 
     if (!data.articles || data.articles.length === 0) {
       console.log('No articles found in response');
+      return { articles: [] };
     }
 
     return data;
   } catch (error) {
     console.error('Error fetching news:', error);
-    throw error;
+    return { articles: [] };
   }
 } 

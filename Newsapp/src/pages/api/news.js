@@ -37,6 +37,22 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json();
+    
+    // If no articles found, try a fallback search
+    if (!data.articles || data.articles.length === 0) {
+      const fallbackUrl = `https://newsapi.org/v2/top-headlines?country=us&language=en&pageSize=100`;
+      const fallbackResponse = await fetch(fallbackUrl, {
+        headers: {
+          'X-Api-Key': API_KEY
+        }
+      });
+      
+      if (fallbackResponse.ok) {
+        const fallbackData = await fallbackResponse.json();
+        return res.status(200).json(fallbackData);
+      }
+    }
+
     return res.status(200).json(data);
   } catch (error) {
     console.error('Error:', error);
