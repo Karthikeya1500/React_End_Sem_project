@@ -5,7 +5,7 @@ export const newsData = {
       title: "India Wins Cricket World Cup 2024",
       description: "In a historic victory, India clinched the Cricket World Cup 2024 after a nail-biting final against Australia. Virat Kohli's masterful century and Jasprit Bumrah's crucial wickets led the team to a 5-wicket victory.",
       urlToImage: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      url: "https://www.espncricinfo.com/series/icc-cricket-world-cup-2024-1234567/india-vs-australia-final-1234567",
+      url: "https://www.espncricinfo.com/live-cricket-score",
       category: "general"
     },
     {
