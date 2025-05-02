@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`,
+      `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&pageSize=25&apiKey=${API_KEY}`,
       {
         method: 'GET',
         headers: {
