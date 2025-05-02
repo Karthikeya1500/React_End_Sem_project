@@ -11,19 +11,21 @@ export default defineConfig({
     sourcemap: true
   },
   server: {
+    port: 3000,
+    open: true,
     cors: true,
     proxy: {
-      '/api/v2': {
+      '/api': {
         target: 'https://newsapi.org',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path,
-        headers: {
-          'X-Api-Key': '43c7bd4efad143be9de9f35313e3c3be'
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        configure: (proxy, options) => {
+          proxy.on('proxyReq', (proxyReq, req, res) => {
+            proxyReq.setHeader('X-Api-Key', '43c7bd4efad143be9de9f35313e3c3be');
+          });
         }
       }
-    },
-    port: 3000,
-    open: true
+    }
   }
 })
