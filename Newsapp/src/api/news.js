@@ -6,15 +6,20 @@ export async function fetchNews(search) {
     const url = `/api/news?search=${encodeURIComponent(search)}`;
     console.log('API URL:', url);
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
     console.log('Response status:', response.status);
     console.log('Response headers:', Object.fromEntries(response.headers.entries()));
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('API Error Response:', errorText);
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json().catch(() => null);
+      console.error('API Error Response:', errorData);
+      throw new Error(errorData?.error || `HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
