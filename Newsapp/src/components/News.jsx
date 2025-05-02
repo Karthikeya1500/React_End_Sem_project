@@ -19,29 +19,48 @@ const News = () => {
     setIsLoading(true);
     setError(null);
     try {
+      if (!API_KEY) {
+        throw new Error('API key is missing. Please check your .env file.');
+      }
+
+      console.log('API Key:', API_KEY); // Debug log
+      
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`,
+        `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`,
         {
           method: 'GET',
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            'Accept': 'application/json'
           },
-          mode: 'cors',
+          mode: 'cors'
         }
       );
       
+      console.log('Response status:', response.status); // Debug log
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to fetch news data');
+        const errorText = await response.text();
+        console.error('Raw error response:', errorText); // Debug log
+        let errorData;
+        try {
+          errorData = JSON.parse(errorText);
+        } catch (e) {
+          errorData = { message: errorText };
+        }
+        throw new Error(errorData.message || `Failed to fetch news data. Status: ${response.status}`);
       }
       
       const jsonData = await response.json();
+      console.log('API Response:', jsonData); // Debug log
+      
       if (jsonData.status === 'error') {
         throw new Error(jsonData.message || 'API Error');
       }
       
-      console.log(jsonData.articles);
+      if (!jsonData.articles || jsonData.articles.length === 0) {
+        throw new Error('No articles found');
+      }
+      
       let dt = jsonData.articles.slice(0, 25);
       setNewsData(dt);
     } catch (error) {
