@@ -20,22 +20,34 @@ const News = () => {
     setError(null);
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
+        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`,
+        {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          mode: 'cors',
+        }
       );
+      
       if (!response.ok) {
-        throw new Error('Failed to fetch news data');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to fetch news data');
       }
+      
       const jsonData = await response.json();
       if (jsonData.status === 'error') {
         throw new Error(jsonData.message || 'API Error');
       }
+      
       console.log(jsonData.articles);
       let dt = jsonData.articles.slice(0, 25);
       setNewsData(dt);
     } catch (error) {
       console.error('Error fetching news:', error);
-      setError(error.message);
-      setNewsData([]); // Set empty array to show loading state
+      setError(error.message || 'Failed to load news. Please check your API key and try again.');
+      setNewsData([]);
     } finally {
       setIsLoading(false);
     }
@@ -73,7 +85,13 @@ const News = () => {
   // Error message component
   const ErrorMessage = () => (
     <div className="error-message">
-      <p>Failed to load news. Please try again later.</p>
+      <p>{error}</p>
+      <p className="error-subtext">If the problem persists, please check:</p>
+      <ul className="error-list">
+        <li>Your internet connection</li>
+        <li>NewsAPI service status</li>
+        <li>API key validity</li>
+      </ul>
       <button onClick={getData} className="retry-button">
         Retry
       </button>

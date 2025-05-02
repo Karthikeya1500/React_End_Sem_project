@@ -633,6 +633,27 @@ body.dark-mode::before {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-subtext {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.error-list {
+  text-align: left;
+  color: #666;
+  font-size: 0.9rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.error-list li {
+  margin: 0.5rem 0;
 }
 
 .retry-button {
@@ -645,6 +666,7 @@ body.dark-mode::before {
   font-weight: bold;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: 1rem;
 }
 
 .retry-button:hover {
@@ -656,6 +678,11 @@ body.dark-mode::before {
 /* Dark mode adjustments for error message */
 .dark-mode .error-message {
   color: #ff6b6b;
+}
+
+.dark-mode .error-subtext,
+.dark-mode .error-list {
+  color: #b0b0b0;
 }
 
 .dark-mode .retry-button {
