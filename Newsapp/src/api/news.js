@@ -3,7 +3,7 @@ const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
 export async function fetchNews(search) {
   try {
     console.log('Fetching news for:', search);
-    const url = `/api/v2/everything?q=${search}&language=en&sortBy=publishedAt&pageSize=100`;
+    const url = `/api/v2/everything?q=${encodeURIComponent(search)}&language=en&sortBy=publishedAt&pageSize=100`;
     console.log('API URL:', url);
 
     const response = await fetch(url, {
@@ -14,6 +14,7 @@ export async function fetchNews(search) {
     });
 
     console.log('Response status:', response.status);
+    console.log('Response headers:', Object.fromEntries(response.headers.entries()));
 
     if (!response.ok) {
       const errorText = await response.text();
