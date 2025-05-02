@@ -19,20 +19,13 @@ const News = () => {
     setIsLoading(true);
     setError(null);
     try {
-      if (!API_KEY) {
-        throw new Error('API key is missing. Please check your .env file.');
-      }
-
-      console.log('API Key:', API_KEY); // Debug log
-      
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`,
+        `/api/news?search=${search}`,
         {
           method: 'GET',
           headers: {
             'Accept': 'application/json'
-          },
-          mode: 'cors'
+          }
         }
       );
       
@@ -65,7 +58,7 @@ const News = () => {
       setNewsData(dt);
     } catch (error) {
       console.error('Error fetching news:', error);
-      setError(error.message || 'Failed to load news. Please check your API key and try again.');
+      setError(error.message || 'Failed to load news. Please try again later.');
       setNewsData([]);
     } finally {
       setIsLoading(false);
