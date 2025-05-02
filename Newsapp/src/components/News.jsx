@@ -16,10 +16,17 @@ const News = () => {
   const getData = async () => {
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
+        `/api/news?search=${search}`,
+        {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          }
+        }
       );
       if (!response.ok) {
-        throw new Error('Failed to fetch news data');
+        throw new Error(`Failed to fetch news data: ${response.status} ${response.statusText}`);
       }
       const jsonData = await response.json();
       console.log(jsonData.articles);
