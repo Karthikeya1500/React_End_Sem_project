@@ -14,10 +14,13 @@ const News = () => {
 
   // Filter news based on search term and category
   const filteredNews = newsData.articles.filter(article => {
-    if (search === "") return true;
-    if (article.category === search) return true;
-    return article.title.toLowerCase().includes(search.toLowerCase()) ||
-           article.description.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = search === "" || 
+      article.title.toLowerCase().includes(search.toLowerCase()) ||
+      article.description.toLowerCase().includes(search.toLowerCase());
+    
+    const matchesCategory = search === "" || article.category === search;
+    
+    return matchesSearch && matchesCategory;
   });
 
   const handleInput = (e) => {
