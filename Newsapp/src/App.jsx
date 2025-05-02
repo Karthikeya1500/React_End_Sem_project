@@ -1,12 +1,12 @@
+import React from 'react'
 import './App.css'
 import Newsapp from "./components/News"
 
-
-
 function App() {
-  
   return (
-   <Newsapp/>
+    <div className="app">
+      <Newsapp />
+    </div>
   )
 }
 
