@@ -3,13 +3,14 @@ const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
 export async function fetchNews(search) {
   try {
     console.log('Fetching news for:', search);
-    const url = `/api/v2/everything?q=${encodeURIComponent(search)}&language=en&sortBy=publishedAt&pageSize=100`;
+    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(search)}&language=en&sortBy=publishedAt&pageSize=100`;
     console.log('API URL:', url);
 
     const response = await fetch(url, {
       method: 'GET',
       headers: {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'X-Api-Key': '43c7bd4efad143be9de9f35313e3c3be'
       }
     });
 

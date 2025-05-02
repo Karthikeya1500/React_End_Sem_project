@@ -7,11 +7,11 @@ export default defineConfig({
   server: {
     cors: true,
     proxy: {
-      '/api': {
+      '/api/v2': {
         target: 'https://newsapi.org',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path,
         headers: {
           'X-Api-Key': '43c7bd4efad143be9de9f35313e3c3be'
         }
