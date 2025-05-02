@@ -15,23 +15,12 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: false,
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'styled-components': ['styled-components']
-        }
-      }
-    }
+    minify: 'terser'
   },
   server: {
     port: 3000,
     open: true,
-    cors: true,
-    hmr: {
-      overlay: true
-    }
+    cors: true
   },
   base: '/',
   publicDir: 'public',
