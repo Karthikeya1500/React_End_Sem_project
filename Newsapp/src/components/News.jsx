@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card.jsx';
+import { fetchNews } from '../api/news';
 
 const News = () => {
   const [search, setSearch] = useState("india");
@@ -18,31 +19,19 @@ const News = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(
-        `/api/news?search=${encodeURIComponent(search)}`,
-        {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json'
-          }
-        }
-      );
+      console.log('Fetching news for search term:', search);
+      const data = await fetchNews(search);
       
-      const jsonData = await response.json();
+      console.log('Raw API response:', data);
       
-      if (!response.ok) {
-        throw new Error(jsonData.message || 'Failed to fetch news data');
-      }
-      
-      if (jsonData.status === 'error') {
-        throw new Error(jsonData.message || 'API Error');
-      }
-      
-      if (!jsonData.articles || jsonData.articles.length === 0) {
+      if (!data.articles || data.articles.length === 0) {
         throw new Error('No articles found. Please try a different search term.');
       }
       
-      setNewsData(jsonData.articles);
+      console.log('Number of articles received:', data.articles.length);
+      console.log('First article:', data.articles[0]);
+      
+      setNewsData(data.articles);
     } catch (error) {
       console.error('Error fetching news:', error);
       setError(error.message || 'Failed to load news. Please try again later.');
@@ -199,67 +188,6 @@ const News = () => {
           >
             India
           </button>
-          {/* Duplicate buttons for seamless scrolling */}
-          <button 
-            onClick={() => setSearch('sports')}
-            className="category-button sports-button"
-          >
-            Sports
-          </button>
-          <button 
-            onClick={() => setSearch('politics')}
-            className="category-button politics-button"
-          >
-            Politics
-          </button>
-          <button 
-            onClick={() => setSearch('entertainment')}
-            className="category-button entertainment-button"
-          >
-            Entertainment
-          </button>
-          <button 
-            onClick={() => setSearch('health')}
-            className="category-button health-button"
-          >
-            Health
-          </button>
-          <button 
-            onClick={() => setSearch('fitness')}
-            className="category-button fitness-button"
-          >
-            Fitness
-          </button>
-          <button 
-            onClick={() => setSearch('technology')}
-            className="category-button technology-button"
-          >
-            Technology
-          </button>
-          <button 
-            onClick={() => setSearch('business')}
-            className="category-button business-button"
-          >
-            Business
-          </button>
-          <button 
-            onClick={() => setSearch('science')}
-            className="category-button science-button"
-          >
-            Science
-          </button>
-          <button 
-            onClick={() => setSearch('world')}
-            className="category-button world-button"
-          >
-            World
-          </button>
-          <button 
-            onClick={() => setSearch('india')}
-            className="category-button india-button"
-          >
-            India
-          </button>
         </div>
       </div>
       
@@ -269,7 +197,12 @@ const News = () => {
         ) : error ? (
           <ErrorMessage />
         ) : newsData && newsData.length > 0 ? (
-          <Card data={newsData} />
+          <div className="cardContainer">
+            {newsData.map((article, index) => {
+              console.log(`Rendering article ${index}:`, article);
+              return <Card key={index} data={article} />;
+            })}
+          </div>
         ) : (
           <div className="no-results">
             <p>No news articles found. Try a different search term.</p>
