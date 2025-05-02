@@ -3,11 +3,10 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "env": {
+    "VITE_NEWS_API_KEY": "@news_api_key"
+  },
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/src/pages/api/$1"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
