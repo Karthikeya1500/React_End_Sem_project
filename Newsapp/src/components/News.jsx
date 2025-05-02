@@ -6,6 +6,7 @@ const News = () => {
   const [newsData, setNewsData] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
   // Toggle dark mode
@@ -16,6 +17,7 @@ const News = () => {
 
   const getData = async () => {
     setIsLoading(true);
+    setError(null);
     try {
       const response = await fetch(
         `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
@@ -24,12 +26,16 @@ const News = () => {
         throw new Error('Failed to fetch news data');
       }
       const jsonData = await response.json();
+      if (jsonData.status === 'error') {
+        throw new Error(jsonData.message || 'API Error');
+      }
       console.log(jsonData.articles);
       let dt = jsonData.articles.slice(0, 25);
       setNewsData(dt);
     } catch (error) {
       console.error('Error fetching news:', error);
-      setNewsData([]); // Set empty array instead of null to show loading state
+      setError(error.message);
+      setNewsData([]); // Set empty array to show loading state
     } finally {
       setIsLoading(false);
     }
@@ -61,6 +67,16 @@ const News = () => {
           </div>
         </div>
       ))}
+    </div>
+  );
+
+  // Error message component
+  const ErrorMessage = () => (
+    <div className="error-message">
+      <p>Failed to load news. Please try again later.</p>
+      <button onClick={getData} className="retry-button">
+        Retry
+      </button>
     </div>
   );
 
@@ -233,6 +249,8 @@ const News = () => {
       <div>
         {isLoading ? (
           <LoadingSkeleton />
+        ) : error ? (
+          <ErrorMessage />
         ) : newsData && newsData.length > 0 ? (
           <Card data={newsData} />
         ) : (

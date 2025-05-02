@@ -622,3 +622,48 @@ body.dark-mode::before {
 .dark-mode .no-results {
   color: #b0b0b0;
 }
+
+/* Error Message Styles */
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.retry-button {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.retry-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+/* Dark mode adjustments for error message */
+.dark-mode .error-message {
+  color: #ff6b6b;
+}
+
+.dark-mode .retry-button {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.dark-mode .retry-button:hover {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
