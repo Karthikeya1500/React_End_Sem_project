@@ -3,7 +3,7 @@ const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
 export async function fetchNews(search) {
   try {
     console.log('Fetching news for:', search);
-    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(search)}&language=en&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`;
+    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(search)}&language=en&sortBy=publishedAt&pageSize=16&apiKey=${API_KEY}`;
     console.log('API URL:', url);
 
     const response = await fetch(url, {
@@ -33,8 +33,8 @@ export async function fetchNews(search) {
 
     if (!data.articles || data.articles.length === 0) {
       console.log('No articles found in response');
-      // Try fallback search
-      const fallbackUrl = `https://newsapi.org/v2/top-headlines?country=us&language=en&pageSize=100&apiKey=${API_KEY}`;
+      // Try fallback search with limited results
+      const fallbackUrl = `https://newsapi.org/v2/top-headlines?country=us&language=en&pageSize=16&apiKey=${API_KEY}`;
       const fallbackResponse = await fetch(fallbackUrl, {
         method: 'GET',
         headers: {
