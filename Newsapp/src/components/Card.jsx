@@ -4,7 +4,7 @@ const Card = ({ data }) => {
   const handleReadMore = (e) => {
     e.preventDefault();
     if (data.url) {
-      window.open(data.url, '_blank');
+      window.open(data.url, '_blank', 'noopener,noreferrer');
     }
   };
 

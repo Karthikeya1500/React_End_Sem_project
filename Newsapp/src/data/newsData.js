@@ -593,6 +593,92 @@ export const newsData = {
       urlToImage: "https://images.unsplash.com/photo-1526778548025-fa2f9cd5f5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
       url: "https://www.financialexpress.com/technology/digital-india-initiative-new-phase-rural-connectivity-1234567",
       category: "india"
+    },
+
+    // Science Articles (12)
+    {
+      title: "ISRO's Mars Mission Success",
+      description: "India's Mars Orbiter Mission 2 successfully enters Martian orbit, marking a historic achievement in space exploration. The mission will study Martian atmosphere and search for signs of life.",
+      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.isro.gov.in/mars-mission-2-success",
+      category: "science"
+    },
+    {
+      title: "Breakthrough in Quantum Computing",
+      description: "Indian scientists achieve quantum supremacy with a 100-qubit processor. This breakthrough could revolutionize computing, cryptography, and scientific research.",
+      urlToImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.nature.com/quantum-computing-india",
+      category: "science"
+    },
+    {
+      title: "Climate Change Research",
+      description: "New study reveals alarming rate of Himalayan glacier melt. Indian researchers develop innovative solutions to combat climate change effects in the region.",
+      urlToImage: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.science.org/climate-change-himalayas",
+      category: "science"
+    },
+    {
+      title: "Medical Research Breakthrough",
+      description: "Indian scientists develop new treatment for rare genetic disorders using CRISPR technology. Clinical trials show promising results with 90% success rate.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.thelancet.com/genetic-disorders-treatment",
+      category: "science"
+    },
+    {
+      title: "Renewable Energy Innovation",
+      description: "New solar panel technology developed in India achieves 40% efficiency. This breakthrough could significantly reduce the cost of solar energy production.",
+      urlToImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.sciencedirect.com/solar-energy-breakthrough",
+      category: "science"
+    },
+    {
+      title: "Ocean Research Expedition",
+      description: "Indian scientists discover new marine species in the Indian Ocean. The findings could lead to breakthroughs in medicine and biotechnology.",
+      urlToImage: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.nature.com/marine-discovery-india",
+      category: "science"
+    },
+    {
+      title: "AI in Healthcare",
+      description: "New AI system developed in India can predict disease outbreaks with 95% accuracy. The technology could revolutionize public health management.",
+      urlToImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.healthcareitnews.com/ai-disease-prediction",
+      category: "science"
+    },
+    {
+      title: "Space Telescope Launch",
+      description: "India launches its first space telescope to study exoplanets. The mission aims to discover potentially habitable planets beyond our solar system.",
+      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.isro.gov.in/space-telescope-launch",
+      category: "science"
+    },
+    {
+      title: "Nanotechnology Breakthrough",
+      description: "Indian researchers develop new nanomaterials for water purification. The technology could provide clean drinking water to millions of people.",
+      urlToImage: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.nature.com/nanotechnology-water-purification",
+      category: "science"
+    },
+    {
+      title: "Climate Modeling Advancements",
+      description: "New climate models developed in India provide more accurate predictions of monsoon patterns. This could help farmers and policymakers better prepare for weather changes.",
+      urlToImage: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.science.org/climate-modeling-india",
+      category: "science"
+    },
+    {
+      title: "Biotechnology Innovation",
+      description: "Indian scientists develop new method for producing biofuels from agricultural waste. The technology could significantly reduce carbon emissions.",
+      urlToImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.sciencedirect.com/biofuel-innovation",
+      category: "science"
+    },
+    {
+      title: "Astronomy Discovery",
+      description: "Indian astronomers discover new galaxy cluster using advanced telescopes. The finding could provide insights into the early universe.",
+      urlToImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      url: "https://www.nature.com/astronomy-discovery-india",
+      category: "science"
     }
   ]
 };
