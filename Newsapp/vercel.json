@@ -31,5 +31,10 @@
         }
       ]
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "VITE_NEWS_API_KEY": "@news_api_key"
+    }
+  }
 } 
