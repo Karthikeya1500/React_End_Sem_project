@@ -8,15 +8,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
-    sourcemap: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'styled-components': ['styled-components']
-        }
-      }
-    }
+    sourcemap: true
   },
   server: {
     port: 3000,
@@ -25,5 +17,8 @@ export default defineConfig({
     hmr: {
       overlay: true
     }
-  }
+  },
+  base: '/',
+  publicDir: 'public',
+  root: '.'
 })
