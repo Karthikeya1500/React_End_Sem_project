@@ -3,7 +3,7 @@ const API_KEY = '43c7bd4efad143be9de9f35313e3c3be';
 export async function fetchNews(search) {
   try {
     console.log('Fetching news for:', search);
-    // Using everything endpoint with more parameters to get more results
+    // Using everything endpoint with more parameters
     const url = `https://newsapi.org/v2/everything?q=${search}&language=en&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`;
     console.log('API URL:', url);
 
@@ -11,7 +11,7 @@ export async function fetchNews(search) {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
-        'X-Api-Key': API_KEY
+        'User-Agent': 'Mozilla/5.0'
       }
     });
 
@@ -21,6 +21,12 @@ export async function fetchNews(search) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('API Error Response:', errorText);
+      console.error('Full error details:', {
+        status: response.status,
+        statusText: response.statusText,
+        headers: Object.fromEntries(response.headers.entries()),
+        errorText
+      });
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
@@ -29,16 +35,36 @@ export async function fetchNews(search) {
     console.log('Number of articles in response:', data.articles?.length);
 
     if (data.status === 'error') {
+      console.error('NewsAPI error:', data);
       throw new Error(data.message || 'NewsAPI error occurred');
     }
 
     if (!data.articles || data.articles.length === 0) {
       console.log('No articles found in response');
+      // Try a fallback search with broader parameters
+      const fallbackUrl = `https://newsapi.org/v2/everything?q=news&language=en&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`;
+      console.log('Trying fallback URL:', fallbackUrl);
+      
+      const fallbackResponse = await fetch(fallbackUrl, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0'
+        }
+      });
+
+      if (fallbackResponse.ok) {
+        const fallbackData = await fallbackResponse.json();
+        if (fallbackData.articles && fallbackData.articles.length > 0) {
+          return fallbackData;
+        }
+      }
     }
 
     return data;
   } catch (error) {
     console.error('Error fetching news:', error);
+    console.error('Error stack:', error.stack);
     throw error;
   }
 } 
