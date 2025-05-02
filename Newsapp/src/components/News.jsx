@@ -14,14 +14,19 @@ const News = () => {
 
   // Filter news based on search term and category
   const filteredNews = newsData.articles.filter(article => {
-    const matchesSearch = search === "" || 
-      article.title.toLowerCase().includes(search.toLowerCase()) ||
+    if (search === "") {
+      // Show only general category articles when no search
+      return article.category === "general";
+    }
+    
+    // When searching, show articles matching the category or search term
+    const matchesSearch = article.title.toLowerCase().includes(search.toLowerCase()) ||
       article.description.toLowerCase().includes(search.toLowerCase());
     
-    const matchesCategory = search === "" || article.category === search;
+    const matchesCategory = article.category === search;
     
-    return matchesSearch && matchesCategory;
-  });
+    return matchesSearch || matchesCategory;
+  }).slice(0, 12); // Limit to 12 articles
 
   const handleInput = (e) => {
     setSearch(e.target.value);

@@ -11,7 +11,7 @@ export const newsData = {
     {
       title: "Lok Sabha Elections 2024: Results Announced",
       description: "The 2024 Lok Sabha elections witnessed a historic voter turnout of 67.8%, the highest in Indian electoral history. Early trends show a close contest between major political parties.",
-      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      urlToImage: "https://images.unsplash.com/photo-1550337?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
       url: "https://www.thehindu.com/elections/lok-sabha/lok-sabha-elections-2024-results/article12345678.ece",
       category: "general"
     },
@@ -53,7 +53,7 @@ export const newsData = {
     {
       title: "New Cabinet Ministers Sworn In",
       description: "Prime Minister Narendra Modi announced his new cabinet with a focus on youth and technology. The 78-member council of ministers includes 12 women and 27 first-time MPs.",
-      urlToImage: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=500",
+      urlToImage: "https://images.unsplash.com/photo-1550337?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
       url: "https://www.indiatoday.in/india/story/new-cabinet-ministers-sworn-in-2024-1234567",
       category: "general"
     },
