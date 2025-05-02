@@ -1,30 +1,19 @@
 import React from 'react';
 
 const Card = ({ data }) => {
-  console.log('Card received data:', data);
-
-  if (!data) {
-    console.log('No data received in Card component');
-    return null;
-  }
-
-  if (!data.urlToImage) {
-    console.log('No image URL for article:', data.title);
-    return null;
-  }
+  const handleReadMore = () => {
+    if (data.url) {
+      window.open(data.url, '_blank');
+    }
+  };
 
   return (
     <div className="card">
-      <img src={data.urlToImage} alt={data.title} />
-      <div className="content">
-        <a
-          className="title"
-          onClick={() => window.open(data.url)}
-        >
-          {data.title}
-        </a>
-        <p>{data.description}</p>
-        <button onClick={() => window.open(data.url)}>
+      <img src={data.urlToImage} alt={data.title} className="card-image" />
+      <div className="card-content">
+        <h2 className="card-title">{data.title}</h2>
+        <p className="card-description">{data.description}</p>
+        <button onClick={handleReadMore} className="read-more-button">
           Read More
         </button>
       </div>

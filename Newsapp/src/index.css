@@ -178,7 +178,7 @@ nav ul{
   overflow: hidden;
   position: relative;
   padding: 1rem 0;
-  background: var(--background-color);
+  background: #f5f6fa;
 }
 
 .buttonWrapper {
@@ -202,30 +202,44 @@ nav ul{
 }
 
 .category-button {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
+  color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
   white-space: nowrap;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .category-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.sports-button { background-color: #FF6B6B; color: white; }
-.politics-button { background-color: #4ECDC4; color: white; }
-.entertainment-button { background-color: #45B7D1; color: white; }
-.health-button { background-color: #96CEB4; color: white; }
-.fitness-button { background-color: #FFEEAD; color: #333; }
-.technology-button { background-color: #D4A5A5; color: white; }
-.business-button { background-color: #9B59B6; color: white; }
-.science-button { background-color: #3498DB; color: white; }
-.world-button { background-color: #E74C3C; color: white; }
-.india-button { background-color: #2ECC71; color: white; }
+.sports-button { --primary-color: #ff6b35; --secondary-color: #ff3d00; }
+.politics-button { --primary-color: #9c27b0; --secondary-color: #6a1b9a; }
+.entertainment-button { --primary-color: #00bcd4; --secondary-color: #00838f; }
+.health-button { --primary-color: #ff5252; --secondary-color: #d50000; }
+.fitness-button { --primary-color: #ffd600; --secondary-color: #ffab00; }
+.technology-button { --primary-color: #2196f3; --secondary-color: #1565c0; }
+.business-button { --primary-color: #4caf50; --secondary-color: #2e7d32; }
+.science-button { --primary-color: #455a64; --secondary-color: #263238; }
+.world-button { --primary-color: #00acc1; --secondary-color: #00838f; }
+.india-button { --primary-color: #ff5722; --secondary-color: #e64a19; }
 
 /* Hide scrollbar */
 .categoryBtn::-webkit-scrollbar {
@@ -257,8 +271,40 @@ nav ul{
   right: 0;
   padding: 1rem;
   text-align: center;
-  background-color: #1a1a1a;
+  background-color: #2c3e50;
+  color: white;
   z-index: 1000;
+}
+
+.footer p {
+  margin: 0;
+  color: white;
+}
+
+/* Search Button Styles */
+.search-button {
+  padding: 0.6rem 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 0.9rem;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.search-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #2980b9, #3498db);
 }
 
 /* Navbar Styles */
@@ -284,6 +330,12 @@ nav ul{
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .search-container {
   display: flex;
   gap: 1rem;
@@ -306,139 +358,56 @@ nav ul{
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-.search-button {
-  padding: 0.6rem 1.2rem;
-  color: white;
+.theme-toggle {
+  background: none;
   border: none;
-  border-radius: 6px;
+  font-size: 1.5rem;
   cursor: pointer;
-  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 50%;
   transition: all 0.3s ease;
-  min-width: 100px;
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 40px;
   height: 40px;
-  font-size: 0.9rem;
-  background: linear-gradient(45deg, #3498db, #2980b9);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  position: relative;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+/* News Container */
+.news-container {
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
   overflow: hidden;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.search-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: 0.5s;
-}
-
-.search-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  background: linear-gradient(45deg, #2980b9, #3498db);
-}
-
-.search-button:hover::before {
-  left: 100%;
-}
-
-/* Category Button Styles */
-.category-button {
-  padding: 0.6rem 1.2rem;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  white-space: nowrap;
-  font-weight: bold;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 140px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.no-results {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.category-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(45deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Category specific colors */
-.sports-button {
-  --primary-color: #ff6b35;
-  --secondary-color: #ff3d00;
-}
-
-.politics-button {
-  --primary-color: #9c27b0;
-  --secondary-color: #6a1b9a;
-}
-
-.entertainment-button {
-  --primary-color: #00bcd4;
-  --secondary-color: #00838f;
-}
-
-.health-button {
-  --primary-color: #ff5252;
-  --secondary-color: #d50000;
-}
-
-.fitness-button {
-  --primary-color: #ffd600;
-  --secondary-color: #ffab00;
-}
-
-.technology-button {
-  --primary-color: #2196f3;
-  --secondary-color: #1565c0;
-}
-
-.business-button {
-  --primary-color: #4caf50;
-  --secondary-color: #2e7d32;
-}
-
-.science-button {
-  --primary-color: #455a64;
-  --secondary-color: #263238;
-}
-
-.world-button {
-  --primary-color: #00acc1;
-  --secondary-color: #00838f;
-}
-
-.india-button {
-  --primary-color: #ff5722;
-  --secondary-color: #e64a19;
-}
-
-/* Footer Styles */
-.footer p {
-  color: white;
-  margin: 0;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 /* Dark Mode Styles */
@@ -449,271 +418,18 @@ body.dark-mode {
   color: #ffffff;
 }
 
-/* Keep navbar consistent in dark mode */
-.dark-mode .navbar {
-  background-color: #2c3e50;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.dark-mode .navbar-title {
-  color: #ecf0f1;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.dark-mode .search-input {
-  background-color: #ecf0f1;
-  border-color: #3498db;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.dark-mode .search-input:focus {
-  border-color: #2980b9;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
-}
-
-.dark-mode .search-button {
-  background: linear-gradient(45deg, #3498db, #2980b9);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.dark-mode .search-button:hover {
-  background: linear-gradient(45deg, #2980b9, #3498db);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
-
-/* Keep footer consistent in dark mode */
-.dark-mode .footer {
-  background-color: #37474f;
-  color: white;
-}
-
-.dark-mode .footer p {
-  color: white;
-}
-
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Add a subtle noise texture overlay */
-body.dark-mode::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Adjust card shadows in dark mode */
 .dark-mode .card {
-  background-color: #2c2c2c;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .card:hover {
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4),
-              0 10px 15px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .card .title {
+  background: #2c2c2c;
   color: #ffffff;
 }
 
-.dark-mode .card p {
-  color: #b0b0b0;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ecf0f1;
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-.theme-toggle svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* Dark mode adjustments */
-.dark-mode .category-button {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .category-button:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* Loading Skeleton Styles */
-.loading-skeleton {
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-.skeleton-image {
-  width: 100%;
-  height: 200px;
-  background-color: #e0e0e0;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.skeleton-title {
-  width: 80%;
-  height: 24px;
-  background-color: #e0e0e0;
-  margin: 15px 0;
-  border-radius: 4px;
-}
-
-.skeleton-text {
-  width: 90%;
-  height: 16px;
-  background-color: #e0e0e0;
-  margin: 8px 0;
-  border-radius: 4px;
-}
-
-.skeleton-button {
-  width: 120px;
-  height: 36px;
-  background-color: #e0e0e0;
-  margin-top: 10px;
-  border-radius: 20px;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: #f5f5f5;
-  }
-  100% {
-    background-color: #e0e0e0;
-  }
-}
-
-/* Dark mode adjustments for skeleton */
-.dark-mode .loading-skeleton {
-  animation: skeleton-loading-dark 1s linear infinite alternate;
-}
-
-.dark-mode .skeleton-image,
-.dark-mode .skeleton-title,
-.dark-mode .skeleton-text,
-.dark-mode .skeleton-button {
-  background-color: #2c2c2c;
-}
-
-@keyframes skeleton-loading-dark {
-  0% {
-    background-color: #2c2c2c;
-  }
-  100% {
-    background-color: #3c3c3c;
-  }
-}
-
-/* No results message */
-.no-results {
-  text-align: center;
-  padding: 2rem;
-  color: #666;
-  font-size: 1.2rem;
-}
-
 .dark-mode .no-results {
-  color: #b0b0b0;
+  color: #ffffff;
 }
 
-/* Error Message Styles */
-.error-message {
-  text-align: center;
-  padding: 2rem;
-  color: #e74c3c;
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.error-subtext {
-  color: #666;
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-.error-list {
-  text-align: left;
-  color: #666;
-  font-size: 0.9rem;
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin: 1rem 0;
-}
-
-.error-list li {
-  margin: 0.5rem 0;
-}
-
-.retry-button {
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #3498db, #2980b9);
+.dark-mode .footer {
+  background-color: #1a1a1a;
   color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  margin-top: 1rem;
 }
 
-.retry-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  background: linear-gradient(45deg, #2980b9, #3498db);
-}
-
-/* Dark mode adjustments for error message */
-.dark-mode .error-message {
-  color: #ff6b6b;
-}
-
-.dark-mode .error-subtext,
-.dark-mode .error-list {
-  color: #b0b0b0;
-}
-
-.dark-mode .retry-button {
-  background: linear-gradient(45deg, #3498db, #2980b9);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.dark-mode .retry-button:hover {
-  background: linear-gradient(45deg, #2980b9, #3498db);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
+/* Keep existing styles for category buttons, footer, etc. */
